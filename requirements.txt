@@ -1,0 +1,8 @@
+pyspark==3.5.3
+pandas>=2.0
+pyarrow>=14.0
+matplotlib>=3.7
+psutil>=5.9
+
+# Tùy chọn (chụp ảnh Spark UI tự động, jobs/ui_capture.py): bỏ dấu # rồi pip install; sau đó chạy: python -m playwright install chromium
+# playwright>=1.40

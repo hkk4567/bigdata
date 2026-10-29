@@ -1,0 +1,6 @@
+category,rows,avg_fare,avg_duration_min,avg_expected_fare_time_only,pct
+1. giá <= 0 (nhóm đảo giao dịch),61521,-19.61,3.22,5.25,7.92
+2. chỉ phí khởi điểm (~3 USD): giống chuyến bị huỷ ngay,135532,2.89,3.62,5.53,17.46
+"3. khởi điểm + phí thời gian: xe đứng yên, đồng hồ chạy",127404,12.22,13.51,12.46,16.41
+4. giá CAO hơn mức thời gian giải thích: nghi quãng đường không được ghi,414897,42.4,11.13,10.79,53.45
+5. giá thấp hơn mức thời gian (khác),36949,18.33,36.73,28.71,4.76

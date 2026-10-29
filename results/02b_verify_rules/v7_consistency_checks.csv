@@ -1,0 +1,6 @@
+check,violations,out_of,pct,note
+"total_amount khác tổng các khoản (> 0,01 USD)",11348614,39691394.0,28.5921,
+tip > 0 trên chuyến trả TIỀN MẶT (dictionary: tip tiền mặt không được ghi),268,5279942.0,0.0051,
+ratecodeid = 2 (JFK) nhưng fare không ≈ 70 USD,268,1331293.0,0.0201,
+airport_fee > 0 nhưng điểm đón không phải JFK/LaGuardia,136540,3165813.0,4.313,
+Flex Fare có tip > 0,629901,,,

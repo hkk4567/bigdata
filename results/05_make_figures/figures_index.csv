@@ -1,0 +1,16 @@
+figure,title,sources
+fig01_bench_scale.png,Quy mô dữ liệu: Spark so với Pandas,results/04_benchmark/bench_summary.csv
+fig02_bench_shuffle.png,Số partition shuffle,results/04_benchmark/bench_summary.csv
+fig03_bench_format.png,Parquet so với CSV,results/04_benchmark/bench_summary.csv; results/04_benchmark/bench_runs.csv; results/04_benchmark/spark_ui/format/stages_summary.csv
+fig04_bench_pruning.png,Partition pruning,results/04_benchmark/bench_summary.csv; results/04_benchmark/spark_ui/pruning/stages_summary.csv
+fig05_bench_cores.png,Tăng tốc theo số nhân,results/04_benchmark/bench_summary.csv
+fig06_kpi_daily_trips.png,Số chuyến theo ngày,results/03_aggregate/kpi_daily.csv
+fig07_kpi_hour_dow_heatmap.png,Nhiệt độ giờ × thứ,results/03_aggregate/kpi_hourly_dow.csv
+fig08_kpi_top_zones.png,15 khu vực đón nhiều nhất,results/03_aggregate/kpi_zone_pickup.csv
+fig09_kpi_payment_mix.png,Cơ cấu thanh toán theo tháng,results/03_aggregate/kpi_payment_month.csv
+fig10_dq_vendor.png,Chất lượng dữ liệu theo nhà cung cấp,results/03_aggregate/kpi_vendor_dq.csv
+fig11_clean_rules_v1_v2.png,Số dòng vi phạm theo luật: bản 1 và bản 2,results/02_clean/rule_counts.csv; results/02_clean_v2/rule_counts.csv
+fig12_mem_pandas_vs_spark.png,RAM đỉnh và thời gian: Pandas so với Spark,results/04b_pandas_memory/mem_runs.csv
+fig13_mem_by_rows_two_datasets.png,RAM đỉnh theo số dòng: Yellow và HVFHV,results/04b_pandas_memory/mem_runs.csv; results/04b_pandas_memory/fhvhv/mem_runs.csv
+fig14_hvfhv_anomalies.png,Bất thường trong HVFHV,results/06_profile_hvfhv/hv_anomalies_by_month.csv
+fig15_hvfhv_pay_ratio_daily.png,"driver_pay > 1,5 × giá cước theo ngày",results/06b_diagnose_hvfhv/h3_ratio_daily.csv

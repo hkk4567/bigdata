@@ -1,0 +1,4 @@
+timestamp,year,month,rows_in,duplicates_removed,rows_rejected,rows_clean,passenger_repaired,pct_clean,status,seconds,zero_distance_flagged
+2026-10-21T06:52:17,2024,1,201000,1000,12687,187313,4000,93.1905,OK,6.81,0
+2026-10-21T06:52:21,2024,2,201000,1000,12730,187270,4000,93.1692,OK,3.81,1
+2026-10-21T06:52:24,2024,3,201000,1000,12829,187171,4000,93.1199,OK,3.52,1

@@ -1,0 +1,12 @@
+data/
+results/
+handoff/
+handoff_*.zip
+tools/
+.venv/
+__pycache__/
+*.pyc
+spark-warehouse/
+metastore_db/
+demo_out/
+.git/

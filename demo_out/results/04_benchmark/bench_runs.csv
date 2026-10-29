@@ -1,0 +1,8 @@
+experiment,config,run,is_warmup,rows,seconds,rows_per_s,note
+scale,spark_1m,1,False,187313,0.851,220097,
+scale,spark_3m,1,False,561754,0.579,970396,
+scale,pandas_1m,1,False,187313,0.084,2238558,
+format,build_csv_3m,0,True,561754,1.830,,một lần
+format,parquet_3m,1,False,561754,0.382,1470192,
+format,csv_3m,1,False,561754,1.161,483693,
+format,disk_bytes,0,True,561754,,,parquet=23970482 csv=111917675 ratio_csv/parquet=4.67

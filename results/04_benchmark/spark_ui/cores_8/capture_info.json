@@ -1,0 +1,9 @@
+{
+ "ui": "http://DESKTOP-6HPGKP3:4040",
+ "app_id": "local-1792469766858",
+ "tag": "cores_8",
+ "jobs": 16,
+ "stages": 23,
+ "sql_queries": 5,
+ "screenshots": 16
+}

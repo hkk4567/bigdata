@@ -1,0 +1,9 @@
+{
+ "ui": "http://DESKTOP-6HPGKP3:4040",
+ "app_id": "local-1792469251625",
+ "tag": "pruning",
+ "jobs": 170,
+ "stages": 251,
+ "sql_queries": 62,
+ "screenshots": 20
+}

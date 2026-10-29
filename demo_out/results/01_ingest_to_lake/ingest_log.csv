@@ -1,0 +1,4 @@
+timestamp,type,year,month,rows_in,rows_out,status,raw_bytes,lake_bytes,seconds,pyarrow_fallback
+2026-10-21T06:52:00,yellow,2024,1,201000,201000,OK,5493877,5618078,4.76,False
+2026-10-21T06:52:01,yellow,2024,2,201000,201000,OK,5484538,5610353,1.22,False
+2026-10-21T06:52:03,yellow,2024,3,201000,201000,OK,5492680,5614767,1.10,False

@@ -1,0 +1,1638 @@
+[
+ {
+  "id": 77,
+  "status": "COMPLETED",
+  "description": "count at <unknown>:0",
+  "planDescription": "== Physical Plan ==\nAdaptiveSparkPlan (12)\n+- == Final Plan ==\n   * HashAggregate (7)\n   +- ShuffleQueryStage (6), Statistics(sizeInBytes=272.0 B, rowCount=17)\n      +- Exchange (5)\n         +- * HashAggregate (4)\n            +- * Project (3)\n               +- * ColumnarToRow (2)\n                  +- Scan parquet  (1)\n+- == Initial Plan ==\n   HashAggregate (11)\n   +- Exchange (10)\n      +- HashAggregate (9)\n         +- Project (8)\n            +- Scan parquet  (1)\n\n\n(1) Scan parquet \nOutput [2]: [year#7657, month#7658]\nBatched: true\nLocation: InMemoryFileIndex [file:/D:/bigdata_project/data/clean_v2/yellow]\nPartitionFilters: [isnotnull(month#7658), (month#7658 <= 12)]\nReadSchema: struct<>\n\n(2) ColumnarToRow [codegen id : 1]\nInput [2]: [year#7657, month#7658]\n\n(3) Project [codegen id : 1]\nOutput: []\nInput [2]: [year#7657, month#7658]\n\n(4) HashAggregate [codegen id : 1]\nInput: []\nKeys: []\nFunctions [1]: [partial_count(1)]\nAggregate Attributes [1]: [count#7723L]\nResults [1]: [count#7724L]\n\n(5) Exchange\nInput [1]: [count#7724L]\nArguments: SinglePartition, ENSURE_REQUIREMENTS, [plan_id=4385]\n\n(6) ShuffleQueryStage\nOutput [1]: [count#7724L]\nArguments: 0\n\n(7) HashAggregate [codegen id : 2]\nInput [1]: [count#7724L]\nKeys: []\nFunctions [1]: [count(1)]\nAggregate Attributes [1]: [count(1)#7720L]\nResults [1]: [count(1)#7720L AS count#7721L]\n\n(8) Project\nOutput: []\nInput [2]: [year#7657, month#7658]\n\n(9) HashAggregate\nInput: []\nKeys: []\nFunctions [1]: [partial_count(1)]\nAggregate Attributes [1]: [count#7723L]\nResults [1]: [count#7724L]\n\n(10) Exchange\nInput [1]: [count#7724L]\nArguments: SinglePartition, ENSURE_REQUIREMENTS, [plan_id=4369]\n\n(11) HashAggregate\nInput [1]: [count#7724L]\nKeys: []\nFunctions [1]: [count(1)]\nAggregate Attributes [1]: [count(1)#7720L]\nResults [1]: [count(1)#7720L AS count#7721L]\n\n(12) AdaptiveSparkPlan\nOutput [1]: [count#7721L]\nArguments: isFinalPlan=true\n\n",
+  "submissionTime": "2026-10-20T04:16:06.963GMT",
+  "duration": 128,
+  "runningJobIds": [],
+  "successJobIds": [
+   1,
+   2
+  ],
+  "failedJobIds": [],
+  "nodes": [
+   {
+    "nodeId": 8,
+    "nodeName": "Scan parquet",
+    "metrics": [
+     {
+      "name": "number of files read",
+      "value": "192"
+     },
+     {
+      "name": "scan time",
+      "value": "total (min, med, max (stageId: taskId))\n186 ms (3 ms, 12 ms, 13 ms (stage 1.0: task 14))"
+     },
+     {
+      "name": "dynamic partition pruning time",
+      "value": "0 ms"
+     },
+     {
+      "name": "metadata time",
+      "value": "0 ms"
+     },
+     {
+      "name": "size of files read",
+      "value": "1372.6 MiB"
+     },
+     {
+      "name": "number of output rows",
+      "value": "40,276,762"
+     },
+     {
+      "name": "number of partitions read",
+      "value": "12"
+     }
+    ]
+   },
+   {
+    "nodeId": 7,
+    "nodeName": "ColumnarToRow",
+    "wholeStageCodegenId": 1,
+    "metrics": [
+     {
+      "name": "number of output rows",
+      "value": "40,276,762"
+     },
+     {
+      "name": "number of input batches",
+      "value": "9,930"
+     }
+    ]
+   },
+   {
+    "nodeId": 6,
+    "nodeName": "Project",
+    "wholeStageCodegenId": 1,
+    "metrics": []
+   },
+   {
+    "nodeId": 5,
+    "nodeName": "HashAggregate",
+    "wholeStageCodegenId": 1,
+    "metrics": [
+     {
+      "name": "time in aggregation build",
+      "value": "total (min, med, max (stageId: taskId))\n406 ms (10 ms, 19 ms, 33 ms (stage 1.0: task 4))"
+     },
+     {
+      "name": "number of output rows",
+      "value": "17"
+     }
+    ]
+   },
+   {
+    "nodeId": 4,
+    "nodeName": "WholeStageCodegen (1)",
+    "metrics": [
+     {
+      "name": "duration",
+      "value": "total (min, med, max (stageId: taskId))\n450 ms (10 ms, 20 ms, 37 ms (stage 1.0: task 6))"
+     }
+    ]
+   },
+   {
+    "nodeId": 3,
+    "nodeName": "Exchange",
+    "metrics": [
+     {
+      "name": "shuffle records written",
+      "value": "17"
+     },
+     {
+      "name": "local merged chunks fetched",
+      "value": "0"
+     },
+     {
+      "name": "shuffle write time",
+      "value": "total (min, med, max (stageId: taskId))\n39 ms (0 ms, 2 ms, 3 ms (stage 1.0: task 3))"
+     },
+     {
+      "name": "remote merged bytes read",
+      "value": "0.0 B"
+     },
+     {
+      "name": "local merged blocks fetched",
+      "value": "0"
+     },
+     {
+      "name": "corrupt merged block chunks",
+      "value": "0"
+     },
+     {
+      "name": "remote merged reqs duration",
+      "value": "0 ms"
+     },
+     {
+      "name": "remote merged blocks fetched",
+      "value": "0"
+     },
+     {
+      "name": "records read",
+      "value": "17"
+     },
+     {
+      "name": "local bytes read",
+      "value": "1003.0 B"
+     },
+     {
+      "name": "fetch wait time",
+      "value": "0 ms"
+     },
+     {
+      "name": "remote bytes read",
+      "value": "0.0 B"
+     },
+     {
+      "name": "merged fetch fallback count",
+      "value": "0"
+     },
+     {
+      "name": "local blocks read",
+      "value": "17"
+     },
+     {
+      "name": "remote merged chunks fetched",
+      "value": "0"
+     },
+     {
+      "name": "remote blocks read",
+      "value": "0"
+     },
+     {
+      "name": "data size",
+      "value": "total (min, med, max (stageId: taskId))\n272.0 B (16.0 B, 16.0 B, 16.0 B (stage 1.0: task 7))"
+     },
+     {
+      "name": "local merged bytes read",
+      "value": "0.0 B"
+     },
+     {
+      "name": "number of partitions",
+      "value": "1"
+     },
+     {
+      "name": "remote reqs duration",
+      "value": "0 ms"
+     },
+     {
+      "name": "remote bytes read to disk",
+      "value": "0.0 B"
+     },
+     {
+      "name": "shuffle bytes written",
+      "value": "total (min, med, max (stageId: taskId))\n1003.0 B (59.0 B, 59.0 B, 59.0 B (stage 1.0: task 7))"
+     }
+    ]
+   },
+   {
+    "nodeId": 2,
+    "nodeName": "HashAggregate",
+    "wholeStageCodegenId": 2,
+    "metrics": [
+     {
+      "name": "time in aggregation build",
+      "value": "3 ms"
+     },
+     {
+      "name": "number of output rows",
+      "value": "1"
+     }
+    ]
+   },
+   {
+    "nodeId": 1,
+    "nodeName": "WholeStageCodegen (2)",
+    "metrics": [
+     {
+      "name": "duration",
+      "value": "3 ms"
+     }
+    ]
+   },
+   {
+    "nodeId": 0,
+    "nodeName": "AdaptiveSparkPlan",
+    "metrics": []
+   }
+  ],
+  "edges": [
+   {
+    "fromId": 2,
+    "toId": 0
+   },
+   {
+    "fromId": 3,
+    "toId": 2
+   },
+   {
+    "fromId": 5,
+    "toId": 3
+   },
+   {
+    "fromId": 6,
+    "toId": 5
+   },
+   {
+    "fromId": 7,
+    "toId": 6
+   },
+   {
+    "fromId": 8,
+    "toId": 7
+   }
+  ]
+ },
+ {
+  "id": 78,
+  "status": "COMPLETED",
+  "description": "first at D:\\bigdata_project\\jobs\\04_benchmark.py:126",
+  "planDescription": "== Physical Plan ==\nAdaptiveSparkPlan (20)\n+- == Final Plan ==\n   * HashAggregate (12)\n   +- ShuffleQueryStage (11), Statistics(sizeInBytes=72.0 B, rowCount=3)\n      +- Exchange (10)\n         +- * HashAggregate (9)\n            +- * HashAggregate (8)\n               +- AQEShuffleRead (7)\n                  +- ShuffleQueryStage (6), Statistics(sizeInBytes=8.0 MiB, rowCount=2.10E+5)\n                     +- Exchange (5)\n                        +- * HashAggregate (4)\n                           +- * Project (3)\n                              +- * ColumnarToRow (2)\n                                 +- Scan parquet  (1)\n+- == Initial Plan ==\n   HashAggregate (19)\n   +- Exchange (18)\n      +- HashAggregate (17)\n         +- HashAggregate (16)\n            +- Exchange (15)\n               +- HashAggregate (14)\n                  +- Project (13)\n                     +- Scan parquet  (1)\n\n\n(1) Scan parquet \nOutput [5]: [tpep_pickup_datetime#7726, pulocationid#7732, total_amount#7741, year#7753, month#7754]\nBatched: true\nLocation: InMemoryFileIndex [file:/D:/bigdata_project/data/clean_v2/yellow]\nPartitionFilters: [isnotnull(month#7754), (month#7754 <= 12)]\nReadSchema: struct<tpep_pickup_datetime:timestamp,pulocationid:int,total_amount:double>\n\n(2) ColumnarToRow [codegen id : 1]\nInput [5]: [tpep_pickup_datetime#7726, pulocationid#7732, total_amount#7741, year#7753, month#7754]\n\n(3) Project [codegen id : 1]\nOutput [3]: [pulocationid#7732, total_amount#7741, cast(tpep_pickup_datetime#7726 as date) AS _groupingexpression#7817]\nInput [5]: [tpep_pickup_datetime#7726, pulocationid#7732, total_amount#7741, year#7753, month#7754]\n\n(4) HashAggregate [codegen id : 1]\nInput [3]: [pulocationid#7732, total_amount#7741, _groupingexpression#7817]\nKeys [2]: [_groupingexpression#7817, pulocationid#7732]\nFunctions [2]: [partial_count(1), partial_sum(total_amount#7741)]\nAggregate Attributes [2]: [count#7822L, sum#7823]\nResults [4]: [_groupingexpression#7817, pulocationid#7732, count#7824L, sum#7825]\n\n(5) Exchange\nInput [4]: [_groupingexpression#7817, pulocationid#7732, count#7824L, sum#7825]\nArguments: hashpartitioning(_groupingexpression#7817, pulocationid#7732, 16), ENSURE_REQUIREMENTS, [plan_id=4446]\n\n(6) ShuffleQueryStage\nOutput [4]: [_groupingexpression#7817, pulocationid#7732, count#7824L, sum#7825]\nArguments: 0\n\n(7) AQEShuffleRead\nInput [4]: [_groupingexpression#7817, pulocationid#7732, count#7824L, sum#7825]\nArguments: coalesced\n\n(8) HashAggregate [codegen id : 2]\nInput [4]: [_groupingexpression#7817, pulocationid#7732, count#7824L, sum#7825]\nKeys [2]: [_groupingexpression#7817, pulocationid#7732]\nFunctions [2]: [count(1), sum(total_amount#7741)]\nAggregate Attributes [2]: [count(1)#7795L, sum(total_amount#7741)#7797]\nResults [2]: [count(1)#7795L AS trips#7796L, sum(total_amount#7741)#7797 AS revenue#7798]\n\n(9) HashAggregate [codegen id : 2]\nInput [2]: [trips#7796L, revenue#7798]\nKeys: []\nFunctions [2]: [partial_sum(trips#7796L), partial_sum(revenue#7798)]\nAggregate Attributes [2]: [sum#7818L, sum#7819]\nResults [2]: [sum#7820L, sum#7821]\n\n(10) Exchange\nInput [2]: [sum#7820L, sum#7821]\nArguments: SinglePartition, ENSURE_REQUIREMENTS, [plan_id=4482]\n\n(11) ShuffleQueryStage\nOutput [2]: [sum#7820L, sum#7821]\nArguments: 1\n\n(12) HashAggregate [codegen id : 3]\nInput [2]: [sum#7820L, sum#7821]\nKeys: []\nFunctions [2]: [sum(trips#7796L), sum(revenue#7798)]\nAggregate Attributes [2]: [sum(trips#7796L)#7806L, sum(revenue#7798)#7807]\nResults [2]: [sum(trips#7796L)#7806L AS sum(trips)#7813L, sum(revenue#7798)#7807 AS sum(revenue)#7814]\n\n(13) Project\nOutput [3]: [pulocationid#7732, total_amount#7741, cast(tpep_pickup_datetime#7726 as date) AS _groupingexpression#7817]\nInput [5]: [tpep_pickup_datetime#7726, pulocationid#7732, total_amount#7741, year#7753, month#7754]\n\n(14) HashAggregate\nInput [3]: [pulocationid#7732, total_amount#7741, _groupingexpression#7817]\nKeys [2]: [_groupingexpression#7817, pulocationid#7732]\nFunctions [2]: [partial_count(1), partial_sum(total_amount#7741)]\nAggregate Attributes [2]: [count#7822L, sum#7823]\nResults [4]: [_groupingexpression#7817, pulocationid#7732, count#7824L, sum#7825]\n\n(15) Exchange\nInput [4]: [_groupingexpression#7817, pulocationid#7732, count#7824L, sum#7825]\nArguments: hashpartitioning(_groupingexpression#7817, pulocationid#7732, 16), ENSURE_REQUIREMENTS, [plan_id=4419]\n\n(16) HashAggregate\nInput [4]: [_groupingexpression#7817, pulocationid#7732, count#7824L, sum#7825]\nKeys [2]: [_groupingexpression#7817, pulocationid#7732]\nFunctions [2]: [count(1), sum(total_amount#7741)]\nAggregate Attributes [2]: [count(1)#7795L, sum(total_amount#7741)#7797]\nResults [2]: [count(1)#7795L AS trips#7796L, sum(total_amount#7741)#7797 AS revenue#7798]\n\n(17) HashAggregate\nInput [2]: [trips#7796L, revenue#7798]\nKeys: []\nFunctions [2]: [partial_sum(trips#7796L), partial_sum(revenue#7798)]\nAggregate Attributes [2]: [sum#7818L, sum#7819]\nResults [2]: [sum#7820L, sum#7821]\n\n(18) Exchange\nInput [2]: [sum#7820L, sum#7821]\nArguments: SinglePartition, ENSURE_REQUIREMENTS, [plan_id=4423]\n\n(19) HashAggregate\nInput [2]: [sum#7820L, sum#7821]\nKeys: []\nFunctions [2]: [sum(trips#7796L), sum(revenue#7798)]\nAggregate Attributes [2]: [sum(trips#7796L)#7806L, sum(revenue#7798)#7807]\nResults [2]: [sum(trips#7796L)#7806L AS sum(trips)#7813L, sum(revenue#7798)#7807 AS sum(revenue)#7814]\n\n(20) AdaptiveSparkPlan\nOutput [2]: [sum(trips)#7813L, sum(revenue)#7814]\nArguments: isFinalPlan=true\n\n",
+  "submissionTime": "2026-10-20T04:16:07.190GMT",
+  "duration": 2037,
+  "runningJobIds": [],
+  "successJobIds": [
+   4,
+   5,
+   6
+  ],
+  "failedJobIds": [],
+  "nodes": [
+   {
+    "nodeId": 13,
+    "nodeName": "Scan parquet",
+    "metrics": [
+     {
+      "name": "number of files read",
+      "value": "192"
+     },
+     {
+      "name": "scan time",
+      "value": "total (min, med, max (stageId: taskId))\n2.5 s (35 ms, 152 ms, 199 ms (stage 5.0: task 22))"
+     },
+     {
+      "name": "dynamic partition pruning time",
+      "value": "0 ms"
+     },
+     {
+      "name": "metadata time",
+      "value": "0 ms"
+     },
+     {
+      "name": "size of files read",
+      "value": "1372.6 MiB"
+     },
+     {
+      "name": "number of output rows",
+      "value": "40,276,762"
+     },
+     {
+      "name": "number of partitions read",
+      "value": "12"
+     }
+    ]
+   },
+   {
+    "nodeId": 12,
+    "nodeName": "ColumnarToRow",
+    "wholeStageCodegenId": 1,
+    "metrics": [
+     {
+      "name": "number of output rows",
+      "value": "40,276,762"
+     },
+     {
+      "name": "number of input batches",
+      "value": "9,930"
+     }
+    ]
+   },
+   {
+    "nodeId": 11,
+    "nodeName": "Project",
+    "wholeStageCodegenId": 1,
+    "metrics": []
+   },
+   {
+    "nodeId": 10,
+    "nodeName": "HashAggregate",
+    "wholeStageCodegenId": 1,
+    "metrics": [
+     {
+      "name": "spill size",
+      "value": "0.0 B"
+     },
+     {
+      "name": "time in aggregation build",
+      "value": "total (min, med, max (stageId: taskId))\n12.8 s (238 ms, 747 ms, 898 ms (stage 5.0: task 21))"
+     },
+     {
+      "name": "peak memory",
+      "value": "total (min, med, max (stageId: taskId))\n142.8 MiB (8.3 MiB, 8.5 MiB, 8.5 MiB (stage 5.0: task 26))"
+     },
+     {
+      "name": "number of output rows",
+      "value": "209,742"
+     },
+     {
+      "name": "number of sort fallback tasks",
+      "value": "0"
+     },
+     {
+      "name": "avg hash probes per key",
+      "value": "(min, med, max (stageId: taskId)):\n(1, 1.1, 1.3 (stage 5.0: task 27))"
+     }
+    ]
+   },
+   {
+    "nodeId": 9,
+    "nodeName": "WholeStageCodegen (1)",
+    "metrics": [
+     {
+      "name": "duration",
+      "value": "total (min, med, max (stageId: taskId))\n13.1 s (245 ms, 756 ms, 930 ms (stage 5.0: task 21))"
+     }
+    ]
+   },
+   {
+    "nodeId": 8,
+    "nodeName": "Exchange",
+    "metrics": [
+     {
+      "name": "shuffle records written",
+      "value": "209,742"
+     },
+     {
+      "name": "local merged chunks fetched",
+      "value": "0"
+     },
+     {
+      "name": "shuffle write time",
+      "value": "total (min, med, max (stageId: taskId))\n304 ms (10 ms, 18 ms, 22 ms (stage 5.0: task 22))"
+     },
+     {
+      "name": "remote merged bytes read",
+      "value": "0.0 B"
+     },
+     {
+      "name": "local merged blocks fetched",
+      "value": "0"
+     },
+     {
+      "name": "corrupt merged block chunks",
+      "value": "0"
+     },
+     {
+      "name": "remote merged reqs duration",
+      "value": "0 ms"
+     },
+     {
+      "name": "remote merged blocks fetched",
+      "value": "0"
+     },
+     {
+      "name": "records read",
+      "value": "209,742"
+     },
+     {
+      "name": "local bytes read",
+      "value": "total (min, med, max (stageId: taskId))\n3.5 MiB (1107.5 KiB, 1108.6 KiB, 1326.8 KiB (stage 7.0: task 39))"
+     },
+     {
+      "name": "fetch wait time",
+      "value": "total (min, med, max (stageId: taskId))\n0 ms (0 ms, 0 ms, 0 ms (stage 7.0: task 37))"
+     },
+     {
+      "name": "remote bytes read",
+      "value": "0.0 B"
+     },
+     {
+      "name": "merged fetch fallback count",
+      "value": "0"
+     },
+     {
+      "name": "local blocks read",
+      "value": "51"
+     },
+     {
+      "name": "remote merged chunks fetched",
+      "value": "0"
+     },
+     {
+      "name": "remote blocks read",
+      "value": "0"
+     },
+     {
+      "name": "data size",
+      "value": "total (min, med, max (stageId: taskId))\n8.0 MiB (261.3 KiB, 492.5 KiB, 728.6 KiB (stage 5.0: task 24))"
+     },
+     {
+      "name": "local merged bytes read",
+      "value": "0.0 B"
+     },
+     {
+      "name": "number of partitions",
+      "value": "16"
+     },
+     {
+      "name": "remote reqs duration",
+      "value": "0 ms"
+     },
+     {
+      "name": "remote bytes read to disk",
+      "value": "0.0 B"
+     },
+     {
+      "name": "shuffle bytes written",
+      "value": "total (min, med, max (stageId: taskId))\n3.5 MiB (114.5 KiB, 213.7 KiB, 312.7 KiB (stage 5.0: task 24))"
+     }
+    ]
+   },
+   {
+    "nodeId": 7,
+    "nodeName": "AQEShuffleRead",
+    "metrics": [
+     {
+      "name": "number of partitions",
+      "value": "3"
+     },
+     {
+      "name": "partition data size",
+      "value": "total (min, med, max (stageId: taskId))\n3.6 MiB (1158.4 KiB, 1167.4 KiB, 1395.1 KiB (driver))"
+     },
+     {
+      "name": "number of coalesced partitions",
+      "value": "3"
+     }
+    ]
+   },
+   {
+    "nodeId": 6,
+    "nodeName": "HashAggregate",
+    "wholeStageCodegenId": 2,
+    "metrics": [
+     {
+      "name": "spill size",
+      "value": "0.0 B"
+     },
+     {
+      "name": "time in aggregation build",
+      "value": "total (min, med, max (stageId: taskId))\n116 ms (38 ms, 38 ms, 40 ms (stage 7.0: task 39))"
+     },
+     {
+      "name": "peak memory",
+      "value": "total (min, med, max (stageId: taskId))\n27.0 MiB (9.0 MiB, 9.0 MiB, 9.0 MiB (stage 7.0: task 37))"
+     },
+     {
+      "name": "number of output rows",
+      "value": "84,633"
+     },
+     {
+      "name": "number of sort fallback tasks",
+      "value": "0"
+     },
+     {
+      "name": "avg hash probes per key",
+      "value": "(min, med, max (stageId: taskId)):\n(1.4, 1.5, 1.5 (stage 7.0: task 37))"
+     }
+    ]
+   },
+   {
+    "nodeId": 5,
+    "nodeName": "HashAggregate",
+    "wholeStageCodegenId": 2,
+    "metrics": [
+     {
+      "name": "spill size",
+      "value": "0.0 B"
+     },
+     {
+      "name": "time in aggregation build",
+      "value": "total (min, med, max (stageId: taskId))\n138 ms (45 ms, 46 ms, 47 ms (stage 7.0: task 39))"
+     },
+     {
+      "name": "peak memory",
+      "value": "0.0 B"
+     },
+     {
+      "name": "number of output rows",
+      "value": "3"
+     },
+     {
+      "name": "number of sort fallback tasks",
+      "value": "0"
+     },
+     {
+      "name": "avg hash probes per key",
+      "value": "0"
+     }
+    ]
+   },
+   {
+    "nodeId": 4,
+    "nodeName": "WholeStageCodegen (2)",
+    "metrics": [
+     {
+      "name": "duration",
+      "value": "total (min, med, max (stageId: taskId))\n139 ms (45 ms, 47 ms, 47 ms (stage 7.0: task 38))"
+     }
+    ]
+   },
+   {
+    "nodeId": 3,
+    "nodeName": "Exchange",
+    "metrics": [
+     {
+      "name": "shuffle records written",
+      "value": "3"
+     },
+     {
+      "name": "local merged chunks fetched",
+      "value": "0"
+     },
+     {
+      "name": "shuffle write time",
+      "value": "total (min, med, max (stageId: taskId))\n3 ms (0 ms, 1 ms, 1 ms (stage 7.0: task 38))"
+     },
+     {
+      "name": "remote merged bytes read",
+      "value": "0.0 B"
+     },
+     {
+      "name": "local merged blocks fetched",
+      "value": "0"
+     },
+     {
+      "name": "corrupt merged block chunks",
+      "value": "0"
+     },
+     {
+      "name": "remote merged reqs duration",
+      "value": "0 ms"
+     },
+     {
+      "name": "remote merged blocks fetched",
+      "value": "0"
+     },
+     {
+      "name": "records read",
+      "value": "3"
+     },
+     {
+      "name": "local bytes read",
+      "value": "195.0 B"
+     },
+     {
+      "name": "fetch wait time",
+      "value": "0 ms"
+     },
+     {
+      "name": "remote bytes read",
+      "value": "0.0 B"
+     },
+     {
+      "name": "merged fetch fallback count",
+      "value": "0"
+     },
+     {
+      "name": "local blocks read",
+      "value": "3"
+     },
+     {
+      "name": "remote merged chunks fetched",
+      "value": "0"
+     },
+     {
+      "name": "remote blocks read",
+      "value": "0"
+     },
+     {
+      "name": "data size",
+      "value": "total (min, med, max (stageId: taskId))\n72.0 B (24.0 B, 24.0 B, 24.0 B (stage 7.0: task 37))"
+     },
+     {
+      "name": "local merged bytes read",
+      "value": "0.0 B"
+     },
+     {
+      "name": "number of partitions",
+      "value": "1"
+     },
+     {
+      "name": "remote reqs duration",
+      "value": "0 ms"
+     },
+     {
+      "name": "remote bytes read to disk",
+      "value": "0.0 B"
+     },
+     {
+      "name": "shuffle bytes written",
+      "value": "total (min, med, max (stageId: taskId))\n195.0 B (65.0 B, 65.0 B, 65.0 B (stage 7.0: task 37))"
+     }
+    ]
+   },
+   {
+    "nodeId": 2,
+    "nodeName": "HashAggregate",
+    "wholeStageCodegenId": 3,
+    "metrics": [
+     {
+      "name": "time in aggregation build",
+      "value": "0 ms"
+     },
+     {
+      "name": "number of output rows",
+      "value": "1"
+     }
+    ]
+   },
+   {
+    "nodeId": 1,
+    "nodeName": "WholeStageCodegen (3)",
+    "metrics": [
+     {
+      "name": "duration",
+      "value": "0 ms"
+     }
+    ]
+   },
+   {
+    "nodeId": 0,
+    "nodeName": "AdaptiveSparkPlan",
+    "metrics": []
+   }
+  ],
+  "edges": [
+   {
+    "fromId": 2,
+    "toId": 0
+   },
+   {
+    "fromId": 3,
+    "toId": 2
+   },
+   {
+    "fromId": 5,
+    "toId": 3
+   },
+   {
+    "fromId": 6,
+    "toId": 5
+   },
+   {
+    "fromId": 7,
+    "toId": 6
+   },
+   {
+    "fromId": 8,
+    "toId": 7
+   },
+   {
+    "fromId": 10,
+    "toId": 8
+   },
+   {
+    "fromId": 11,
+    "toId": 10
+   },
+   {
+    "fromId": 12,
+    "toId": 11
+   },
+   {
+    "fromId": 13,
+    "toId": 12
+   }
+  ]
+ },
+ {
+  "id": 79,
+  "status": "COMPLETED",
+  "description": "save at <unknown>:0",
+  "planDescription": "== Physical Plan ==\nOverwriteByExpression (14)\n+- AdaptiveSparkPlan (13)\n   +- == Final Plan ==\n      * HashAggregate (8)\n      +- AQEShuffleRead (7)\n         +- ShuffleQueryStage (6), Statistics(sizeInBytes=11.2 MiB, rowCount=2.10E+5)\n            +- Exchange (5)\n               +- * HashAggregate (4)\n                  +- * Project (3)\n                     +- * ColumnarToRow (2)\n                        +- Scan parquet  (1)\n   +- == Initial Plan ==\n      HashAggregate (12)\n      +- Exchange (11)\n         +- HashAggregate (10)\n            +- Project (9)\n               +- Scan parquet  (1)\n\n\n(1) Scan parquet \nOutput [6]: [tpep_pickup_datetime#7837, pulocationid#7843, fare_amount#7846, total_amount#7852, year#7864, month#7865]\nBatched: true\nLocation: InMemoryFileIndex [file:/D:/bigdata_project/data/clean_v2/yellow]\nPartitionFilters: [isnotnull(month#7865), (month#7865 <= 12)]\nReadSchema: struct<tpep_pickup_datetime:timestamp,pulocationid:int,fare_amount:double,total_amount:double>\n\n(2) ColumnarToRow [codegen id : 1]\nInput [6]: [tpep_pickup_datetime#7837, pulocationid#7843, fare_amount#7846, total_amount#7852, year#7864, month#7865]\n\n(3) Project [codegen id : 1]\nOutput [4]: [pulocationid#7843, fare_amount#7846, total_amount#7852, cast(tpep_pickup_datetime#7837 as date) AS _groupingexpression#7922]\nInput [6]: [tpep_pickup_datetime#7837, pulocationid#7843, fare_amount#7846, total_amount#7852, year#7864, month#7865]\n\n(4) HashAggregate [codegen id : 1]\nInput [4]: [pulocationid#7843, fare_amount#7846, total_amount#7852, _groupingexpression#7922]\nKeys [2]: [_groupingexpression#7922, pulocationid#7843]\nFunctions [3]: [partial_count(1), partial_sum(total_amount#7852), partial_avg(fare_amount#7846)]\nAggregate Attributes [4]: [count#7923L, sum#7924, sum#7925, count#7926L]\nResults [6]: [_groupingexpression#7922, pulocationid#7843, count#7927L, sum#7928, sum#7929, count#7930L]\n\n(5) Exchange\nInput [6]: [_groupingexpression#7922, pulocationid#7843, count#7927L, sum#7928, sum#7929, count#7930L]\nArguments: hashpartitioning(_groupingexpression#7922, pulocationid#7843, 16), ENSURE_REQUIREMENTS, [plan_id=4533]\n\n(6) ShuffleQueryStage\nOutput [6]: [_groupingexpression#7922, pulocationid#7843, count#7927L, sum#7928, sum#7929, count#7930L]\nArguments: 0\n\n(7) AQEShuffleRead\nInput [6]: [_groupingexpression#7922, pulocationid#7843, count#7927L, sum#7928, sum#7929, count#7930L]\nArguments: coalesced\n\n(8) HashAggregate [codegen id : 2]\nInput [6]: [_groupingexpression#7922, pulocationid#7843, count#7927L, sum#7928, sum#7929, count#7930L]\nKeys [2]: [_groupingexpression#7922, pulocationid#7843]\nFunctions [3]: [count(1), sum(total_amount#7852), avg(fare_amount#7846)]\nAggregate Attributes [3]: [count(1)#7906L, sum(total_amount#7852)#7908, avg(fare_amount#7846)#7910]\nResults [5]: [_groupingexpression#7922 AS d#7901, pulocationid#7843, count(1)#7906L AS trips#7907L, sum(total_amount#7852)#7908 AS revenue#7909, avg(fare_amount#7846)#7910 AS avg_fare#7911]\n\n(9) Project\nOutput [4]: [pulocationid#7843, fare_amount#7846, total_amount#7852, cast(tpep_pickup_datetime#7837 as date) AS _groupingexpression#7922]\nInput [6]: [tpep_pickup_datetime#7837, pulocationid#7843, fare_amount#7846, total_amount#7852, year#7864, month#7865]\n\n(10) HashAggregate\nInput [4]: [pulocationid#7843, fare_amount#7846, total_amount#7852, _groupingexpression#7922]\nKeys [2]: [_groupingexpression#7922, pulocationid#7843]\nFunctions [3]: [partial_count(1), partial_sum(total_amount#7852), partial_avg(fare_amount#7846)]\nAggregate Attributes [4]: [count#7923L, sum#7924, sum#7925, count#7926L]\nResults [6]: [_groupingexpression#7922, pulocationid#7843, count#7927L, sum#7928, sum#7929, count#7930L]\n\n(11) Exchange\nInput [6]: [_groupingexpression#7922, pulocationid#7843, count#7927L, sum#7928, sum#7929, count#7930L]\nArguments: hashpartitioning(_groupingexpression#7922, pulocationid#7843, 16), ENSURE_REQUIREMENTS, [plan_id=4514]\n\n(12) HashAggregate\nInput [6]: [_groupingexpression#7922, pulocationid#7843, count#7927L, sum#7928, sum#7929, count#7930L]\nKeys [2]: [_groupingexpression#7922, pulocationid#7843]\nFunctions [3]: [count(1), sum(total_amount#7852), avg(fare_amount#7846)]\nAggregate Attributes [3]: [count(1)#7906L, sum(total_amount#7852)#7908, avg(fare_amount#7846)#7910]\nResults [5]: [_groupingexpression#7922 AS d#7901, pulocationid#7843, count(1)#7906L AS trips#7907L, sum(total_amount#7852)#7908 AS revenue#7909, avg(fare_amount#7846)#7910 AS avg_fare#7911]\n\n(13) AdaptiveSparkPlan\nOutput [5]: [d#7901, pulocationid#7843, trips#7907L, revenue#7909, avg_fare#7911]\nArguments: isFinalPlan=true\n\n(14) OverwriteByExpression\nInput [5]: [d#7901, pulocationid#7843, trips#7907L, revenue#7909, avg_fare#7911]\nArguments: org.apache.spark.sql.execution.datasources.v2.DataSourceV2Strategy$$Lambda$3473/72586714@25d16fb8, org.apache.spark.sql.execution.datasources.noop.NoopWrite$@fefcced\n\n",
+  "submissionTime": "2026-10-20T04:16:09.349GMT",
+  "duration": 2045,
+  "runningJobIds": [],
+  "successJobIds": [
+   8,
+   9
+  ],
+  "failedJobIds": [],
+  "nodes": [
+   {
+    "nodeId": 10,
+    "nodeName": "Scan parquet",
+    "metrics": [
+     {
+      "name": "number of files read",
+      "value": "192"
+     },
+     {
+      "name": "scan time",
+      "value": "total (min, med, max (stageId: taskId))\n2.5 s (41 ms, 153 ms, 173 ms (stage 12.0: task 42))"
+     },
+     {
+      "name": "dynamic partition pruning time",
+      "value": "0 ms"
+     },
+     {
+      "name": "metadata time",
+      "value": "0 ms"
+     },
+     {
+      "name": "size of files read",
+      "value": "1372.6 MiB"
+     },
+     {
+      "name": "number of output rows",
+      "value": "40,276,762"
+     },
+     {
+      "name": "number of partitions read",
+      "value": "12"
+     }
+    ]
+   },
+   {
+    "nodeId": 9,
+    "nodeName": "ColumnarToRow",
+    "wholeStageCodegenId": 1,
+    "metrics": [
+     {
+      "name": "number of output rows",
+      "value": "40,276,762"
+     },
+     {
+      "name": "number of input batches",
+      "value": "9,930"
+     }
+    ]
+   },
+   {
+    "nodeId": 8,
+    "nodeName": "Project",
+    "wholeStageCodegenId": 1,
+    "metrics": []
+   },
+   {
+    "nodeId": 7,
+    "nodeName": "HashAggregate",
+    "wholeStageCodegenId": 1,
+    "metrics": [
+     {
+      "name": "spill size",
+      "value": "0.0 B"
+     },
+     {
+      "name": "time in aggregation build",
+      "value": "total (min, med, max (stageId: taskId))\n12.9 s (287 ms, 759 ms, 877 ms (stage 12.0: task 42))"
+     },
+     {
+      "name": "peak memory",
+      "value": "total (min, med, max (stageId: taskId))\n142.8 MiB (8.3 MiB, 8.5 MiB, 8.5 MiB (stage 12.0: task 49))"
+     },
+     {
+      "name": "number of output rows",
+      "value": "209,742"
+     },
+     {
+      "name": "number of sort fallback tasks",
+      "value": "0"
+     },
+     {
+      "name": "avg hash probes per key",
+      "value": "(min, med, max (stageId: taskId)):\n(1, 1.1, 1.3 (stage 12.0: task 49))"
+     }
+    ]
+   },
+   {
+    "nodeId": 6,
+    "nodeName": "WholeStageCodegen (1)",
+    "metrics": [
+     {
+      "name": "duration",
+      "value": "total (min, med, max (stageId: taskId))\n13.2 s (293 ms, 770 ms, 896 ms (stage 12.0: task 47))"
+     }
+    ]
+   },
+   {
+    "nodeId": 5,
+    "nodeName": "Exchange",
+    "metrics": [
+     {
+      "name": "shuffle records written",
+      "value": "209,742"
+     },
+     {
+      "name": "local merged chunks fetched",
+      "value": "0"
+     },
+     {
+      "name": "shuffle write time",
+      "value": "total (min, med, max (stageId: taskId))\n315 ms (8 ms, 19 ms, 25 ms (stage 12.0: task 57))"
+     },
+     {
+      "name": "remote merged bytes read",
+      "value": "0.0 B"
+     },
+     {
+      "name": "local merged blocks fetched",
+      "value": "0"
+     },
+     {
+      "name": "corrupt merged block chunks",
+      "value": "0"
+     },
+     {
+      "name": "remote merged reqs duration",
+      "value": "0 ms"
+     },
+     {
+      "name": "remote merged blocks fetched",
+      "value": "0"
+     },
+     {
+      "name": "records read",
+      "value": "209,742"
+     },
+     {
+      "name": "local bytes read",
+      "value": "total (min, med, max (stageId: taskId))\n5.2 MiB (987.5 KiB, 992.7 KiB, 1320.5 KiB (stage 14.0: task 63))"
+     },
+     {
+      "name": "fetch wait time",
+      "value": "total (min, med, max (stageId: taskId))\n0 ms (0 ms, 0 ms, 0 ms (stage 14.0: task 60))"
+     },
+     {
+      "name": "remote bytes read",
+      "value": "0.0 B"
+     },
+     {
+      "name": "merged fetch fallback count",
+      "value": "0"
+     },
+     {
+      "name": "local blocks read",
+      "value": "85"
+     },
+     {
+      "name": "remote merged chunks fetched",
+      "value": "0"
+     },
+     {
+      "name": "remote blocks read",
+      "value": "0"
+     },
+     {
+      "name": "data size",
+      "value": "total (min, med, max (stageId: taskId))\n11.2 MiB (365.8 KiB, 689.4 KiB, 1020.0 KiB (stage 12.0: task 46))"
+     },
+     {
+      "name": "local merged bytes read",
+      "value": "0.0 B"
+     },
+     {
+      "name": "number of partitions",
+      "value": "16"
+     },
+     {
+      "name": "remote reqs duration",
+      "value": "0 ms"
+     },
+     {
+      "name": "remote bytes read to disk",
+      "value": "0.0 B"
+     },
+     {
+      "name": "shuffle bytes written",
+      "value": "total (min, med, max (stageId: taskId))\n5.2 MiB (170.3 KiB, 316.9 KiB, 465.6 KiB (stage 12.0: task 46))"
+     }
+    ]
+   },
+   {
+    "nodeId": 4,
+    "nodeName": "AQEShuffleRead",
+    "metrics": [
+     {
+      "name": "number of partitions",
+      "value": "5"
+     },
+     {
+      "name": "partition data size",
+      "value": "total (min, med, max (stageId: taskId))\n5.4 MiB (1029.5 KiB, 1045.1 KiB, 1387.7 KiB (driver))"
+     },
+     {
+      "name": "number of coalesced partitions",
+      "value": "5"
+     }
+    ]
+   },
+   {
+    "nodeId": 3,
+    "nodeName": "HashAggregate",
+    "wholeStageCodegenId": 2,
+    "metrics": [
+     {
+      "name": "spill size",
+      "value": "0.0 B"
+     },
+     {
+      "name": "time in aggregation build",
+      "value": "total (min, med, max (stageId: taskId))\n155 ms (29 ms, 29 ms, 37 ms (stage 14.0: task 63))"
+     },
+     {
+      "name": "peak memory",
+      "value": "total (min, med, max (stageId: taskId))\n43.0 MiB (8.5 MiB, 8.5 MiB, 9.0 MiB (stage 14.0: task 63))"
+     },
+     {
+      "name": "number of output rows",
+      "value": "84,633"
+     },
+     {
+      "name": "number of sort fallback tasks",
+      "value": "0"
+     },
+     {
+      "name": "avg hash probes per key",
+      "value": "(min, med, max (stageId: taskId)):\n(1.4, 1.5, 1.5 (stage 14.0: task 60))"
+     }
+    ]
+   },
+   {
+    "nodeId": 2,
+    "nodeName": "WholeStageCodegen (2)",
+    "metrics": [
+     {
+      "name": "duration",
+      "value": "total (min, med, max (stageId: taskId))\n218 ms (43 ms, 44 ms, 44 ms (stage 14.0: task 62))"
+     }
+    ]
+   },
+   {
+    "nodeId": 1,
+    "nodeName": "AdaptiveSparkPlan",
+    "metrics": []
+   },
+   {
+    "nodeId": 0,
+    "nodeName": "OverwriteByExpression",
+    "metrics": []
+   }
+  ],
+  "edges": [
+   {
+    "fromId": 1,
+    "toId": 0
+   },
+   {
+    "fromId": 3,
+    "toId": 1
+   },
+   {
+    "fromId": 4,
+    "toId": 3
+   },
+   {
+    "fromId": 5,
+    "toId": 4
+   },
+   {
+    "fromId": 7,
+    "toId": 5
+   },
+   {
+    "fromId": 8,
+    "toId": 7
+   },
+   {
+    "fromId": 9,
+    "toId": 8
+   },
+   {
+    "fromId": 10,
+    "toId": 9
+   }
+  ]
+ },
+ {
+  "id": 80,
+  "status": "COMPLETED",
+  "description": "save at <unknown>:0",
+  "planDescription": "== Physical Plan ==\nOverwriteByExpression (14)\n+- AdaptiveSparkPlan (13)\n   +- == Final Plan ==\n      * HashAggregate (8)\n      +- AQEShuffleRead (7)\n         +- ShuffleQueryStage (6), Statistics(sizeInBytes=11.2 MiB, rowCount=2.10E+5)\n            +- Exchange (5)\n               +- * HashAggregate (4)\n                  +- * Project (3)\n                     +- * ColumnarToRow (2)\n                        +- Scan parquet  (1)\n   +- == Initial Plan ==\n      HashAggregate (12)\n      +- Exchange (11)\n         +- HashAggregate (10)\n            +- Project (9)\n               +- Scan parquet  (1)\n\n\n(1) Scan parquet \nOutput [6]: [tpep_pickup_datetime#7938, pulocationid#7944, fare_amount#7947, total_amount#7953, year#7965, month#7966]\nBatched: true\nLocation: InMemoryFileIndex [file:/D:/bigdata_project/data/clean_v2/yellow]\nPartitionFilters: [isnotnull(month#7966), (month#7966 <= 12)]\nReadSchema: struct<tpep_pickup_datetime:timestamp,pulocationid:int,fare_amount:double,total_amount:double>\n\n(2) ColumnarToRow [codegen id : 1]\nInput [6]: [tpep_pickup_datetime#7938, pulocationid#7944, fare_amount#7947, total_amount#7953, year#7965, month#7966]\n\n(3) Project [codegen id : 1]\nOutput [4]: [pulocationid#7944, fare_amount#7947, total_amount#7953, cast(tpep_pickup_datetime#7938 as date) AS _groupingexpression#8023]\nInput [6]: [tpep_pickup_datetime#7938, pulocationid#7944, fare_amount#7947, total_amount#7953, year#7965, month#7966]\n\n(4) HashAggregate [codegen id : 1]\nInput [4]: [pulocationid#7944, fare_amount#7947, total_amount#7953, _groupingexpression#8023]\nKeys [2]: [_groupingexpression#8023, pulocationid#7944]\nFunctions [3]: [partial_count(1), partial_sum(total_amount#7953), partial_avg(fare_amount#7947)]\nAggregate Attributes [4]: [count#8024L, sum#8025, sum#8026, count#8027L]\nResults [6]: [_groupingexpression#8023, pulocationid#7944, count#8028L, sum#8029, sum#8030, count#8031L]\n\n(5) Exchange\nInput [6]: [_groupingexpression#8023, pulocationid#7944, count#8028L, sum#8029, sum#8030, count#8031L]\nArguments: hashpartitioning(_groupingexpression#8023, pulocationid#7944, 16), ENSURE_REQUIREMENTS, [plan_id=4587]\n\n(6) ShuffleQueryStage\nOutput [6]: [_groupingexpression#8023, pulocationid#7944, count#8028L, sum#8029, sum#8030, count#8031L]\nArguments: 0\n\n(7) AQEShuffleRead\nInput [6]: [_groupingexpression#8023, pulocationid#7944, count#8028L, sum#8029, sum#8030, count#8031L]\nArguments: coalesced\n\n(8) HashAggregate [codegen id : 2]\nInput [6]: [_groupingexpression#8023, pulocationid#7944, count#8028L, sum#8029, sum#8030, count#8031L]\nKeys [2]: [_groupingexpression#8023, pulocationid#7944]\nFunctions [3]: [count(1), sum(total_amount#7953), avg(fare_amount#7947)]\nAggregate Attributes [3]: [count(1)#8007L, sum(total_amount#7953)#8009, avg(fare_amount#7947)#8011]\nResults [5]: [_groupingexpression#8023 AS d#8002, pulocationid#7944, count(1)#8007L AS trips#8008L, sum(total_amount#7953)#8009 AS revenue#8010, avg(fare_amount#7947)#8011 AS avg_fare#8012]\n\n(9) Project\nOutput [4]: [pulocationid#7944, fare_amount#7947, total_amount#7953, cast(tpep_pickup_datetime#7938 as date) AS _groupingexpression#8023]\nInput [6]: [tpep_pickup_datetime#7938, pulocationid#7944, fare_amount#7947, total_amount#7953, year#7965, month#7966]\n\n(10) HashAggregate\nInput [4]: [pulocationid#7944, fare_amount#7947, total_amount#7953, _groupingexpression#8023]\nKeys [2]: [_groupingexpression#8023, pulocationid#7944]\nFunctions [3]: [partial_count(1), partial_sum(total_amount#7953), partial_avg(fare_amount#7947)]\nAggregate Attributes [4]: [count#8024L, sum#8025, sum#8026, count#8027L]\nResults [6]: [_groupingexpression#8023, pulocationid#7944, count#8028L, sum#8029, sum#8030, count#8031L]\n\n(11) Exchange\nInput [6]: [_groupingexpression#8023, pulocationid#7944, count#8028L, sum#8029, sum#8030, count#8031L]\nArguments: hashpartitioning(_groupingexpression#8023, pulocationid#7944, 16), ENSURE_REQUIREMENTS, [plan_id=4568]\n\n(12) HashAggregate\nInput [6]: [_groupingexpression#8023, pulocationid#7944, count#8028L, sum#8029, sum#8030, count#8031L]\nKeys [2]: [_groupingexpression#8023, pulocationid#7944]\nFunctions [3]: [count(1), sum(total_amount#7953), avg(fare_amount#7947)]\nAggregate Attributes [3]: [count(1)#8007L, sum(total_amount#7953)#8009, avg(fare_amount#7947)#8011]\nResults [5]: [_groupingexpression#8023 AS d#8002, pulocationid#7944, count(1)#8007L AS trips#8008L, sum(total_amount#7953)#8009 AS revenue#8010, avg(fare_amount#7947)#8011 AS avg_fare#8012]\n\n(13) AdaptiveSparkPlan\nOutput [5]: [d#8002, pulocationid#7944, trips#8008L, revenue#8010, avg_fare#8012]\nArguments: isFinalPlan=true\n\n(14) OverwriteByExpression\nInput [5]: [d#8002, pulocationid#7944, trips#8008L, revenue#8010, avg_fare#8012]\nArguments: org.apache.spark.sql.execution.datasources.v2.DataSourceV2Strategy$$Lambda$3473/72586714@50eebf61, org.apache.spark.sql.execution.datasources.noop.NoopWrite$@fefcced\n\n",
+  "submissionTime": "2026-10-20T04:16:11.497GMT",
+  "duration": 2017,
+  "runningJobIds": [],
+  "successJobIds": [
+   11,
+   12
+  ],
+  "failedJobIds": [],
+  "nodes": [
+   {
+    "nodeId": 10,
+    "nodeName": "Scan parquet",
+    "metrics": [
+     {
+      "name": "number of files read",
+      "value": "192"
+     },
+     {
+      "name": "scan time",
+      "value": "total (min, med, max (stageId: taskId))\n2.3 s (55 ms, 141 ms, 175 ms (stage 16.0: task 68))"
+     },
+     {
+      "name": "dynamic partition pruning time",
+      "value": "0 ms"
+     },
+     {
+      "name": "metadata time",
+      "value": "0 ms"
+     },
+     {
+      "name": "size of files read",
+      "value": "1372.6 MiB"
+     },
+     {
+      "name": "number of output rows",
+      "value": "40,276,762"
+     },
+     {
+      "name": "number of partitions read",
+      "value": "12"
+     }
+    ]
+   },
+   {
+    "nodeId": 9,
+    "nodeName": "ColumnarToRow",
+    "wholeStageCodegenId": 1,
+    "metrics": [
+     {
+      "name": "number of output rows",
+      "value": "40,276,762"
+     },
+     {
+      "name": "number of input batches",
+      "value": "9,930"
+     }
+    ]
+   },
+   {
+    "nodeId": 8,
+    "nodeName": "Project",
+    "wholeStageCodegenId": 1,
+    "metrics": []
+   },
+   {
+    "nodeId": 7,
+    "nodeName": "HashAggregate",
+    "wholeStageCodegenId": 1,
+    "metrics": [
+     {
+      "name": "spill size",
+      "value": "0.0 B"
+     },
+     {
+      "name": "time in aggregation build",
+      "value": "total (min, med, max (stageId: taskId))\n12.6 s (350 ms, 770 ms, 851 ms (stage 16.0: task 66))"
+     },
+     {
+      "name": "peak memory",
+      "value": "total (min, med, max (stageId: taskId))\n142.8 MiB (8.3 MiB, 8.5 MiB, 8.5 MiB (stage 16.0: task 72))"
+     },
+     {
+      "name": "number of output rows",
+      "value": "209,742"
+     },
+     {
+      "name": "number of sort fallback tasks",
+      "value": "0"
+     },
+     {
+      "name": "avg hash probes per key",
+      "value": "(min, med, max (stageId: taskId)):\n(1, 1.1, 1.3 (stage 16.0: task 72))"
+     }
+    ]
+   },
+   {
+    "nodeId": 6,
+    "nodeName": "WholeStageCodegen (1)",
+    "metrics": [
+     {
+      "name": "duration",
+      "value": "total (min, med, max (stageId: taskId))\n12.8 s (357 ms, 782 ms, 874 ms (stage 16.0: task 66))"
+     }
+    ]
+   },
+   {
+    "nodeId": 5,
+    "nodeName": "Exchange",
+    "metrics": [
+     {
+      "name": "shuffle records written",
+      "value": "209,742"
+     },
+     {
+      "name": "local merged chunks fetched",
+      "value": "0"
+     },
+     {
+      "name": "shuffle write time",
+      "value": "total (min, med, max (stageId: taskId))\n317 ms (9 ms, 20 ms, 23 ms (stage 16.0: task 75))"
+     },
+     {
+      "name": "remote merged bytes read",
+      "value": "0.0 B"
+     },
+     {
+      "name": "local merged blocks fetched",
+      "value": "0"
+     },
+     {
+      "name": "corrupt merged block chunks",
+      "value": "0"
+     },
+     {
+      "name": "remote merged reqs duration",
+      "value": "0 ms"
+     },
+     {
+      "name": "remote merged blocks fetched",
+      "value": "0"
+     },
+     {
+      "name": "records read",
+      "value": "209,742"
+     },
+     {
+      "name": "local bytes read",
+      "value": "total (min, med, max (stageId: taskId))\n5.2 MiB (987.5 KiB, 992.7 KiB, 1320.5 KiB (stage 18.0: task 86))"
+     },
+     {
+      "name": "fetch wait time",
+      "value": "total (min, med, max (stageId: taskId))\n0 ms (0 ms, 0 ms, 0 ms (stage 18.0: task 84))"
+     },
+     {
+      "name": "remote bytes read",
+      "value": "0.0 B"
+     },
+     {
+      "name": "merged fetch fallback count",
+      "value": "0"
+     },
+     {
+      "name": "local blocks read",
+      "value": "85"
+     },
+     {
+      "name": "remote merged chunks fetched",
+      "value": "0"
+     },
+     {
+      "name": "remote blocks read",
+      "value": "0"
+     },
+     {
+      "name": "data size",
+      "value": "total (min, med, max (stageId: taskId))\n11.2 MiB (365.8 KiB, 689.4 KiB, 1020.0 KiB (stage 16.0: task 69))"
+     },
+     {
+      "name": "local merged bytes read",
+      "value": "0.0 B"
+     },
+     {
+      "name": "number of partitions",
+      "value": "16"
+     },
+     {
+      "name": "remote reqs duration",
+      "value": "0 ms"
+     },
+     {
+      "name": "remote bytes read to disk",
+      "value": "0.0 B"
+     },
+     {
+      "name": "shuffle bytes written",
+      "value": "total (min, med, max (stageId: taskId))\n5.2 MiB (170.3 KiB, 316.9 KiB, 465.6 KiB (stage 16.0: task 69))"
+     }
+    ]
+   },
+   {
+    "nodeId": 4,
+    "nodeName": "AQEShuffleRead",
+    "metrics": [
+     {
+      "name": "number of partitions",
+      "value": "5"
+     },
+     {
+      "name": "partition data size",
+      "value": "total (min, med, max (stageId: taskId))\n5.4 MiB (1029.5 KiB, 1045.1 KiB, 1387.7 KiB (driver))"
+     },
+     {
+      "name": "number of coalesced partitions",
+      "value": "5"
+     }
+    ]
+   },
+   {
+    "nodeId": 3,
+    "nodeName": "HashAggregate",
+    "wholeStageCodegenId": 2,
+    "metrics": [
+     {
+      "name": "spill size",
+      "value": "0.0 B"
+     },
+     {
+      "name": "time in aggregation build",
+      "value": "total (min, med, max (stageId: taskId))\n111 ms (21 ms, 21 ms, 25 ms (stage 18.0: task 86))"
+     },
+     {
+      "name": "peak memory",
+      "value": "total (min, med, max (stageId: taskId))\n43.0 MiB (8.5 MiB, 8.5 MiB, 9.0 MiB (stage 18.0: task 86))"
+     },
+     {
+      "name": "number of output rows",
+      "value": "84,633"
+     },
+     {
+      "name": "number of sort fallback tasks",
+      "value": "0"
+     },
+     {
+      "name": "avg hash probes per key",
+      "value": "(min, med, max (stageId: taskId)):\n(1.4, 1.5, 1.5 (stage 18.0: task 84))"
+     }
+    ]
+   },
+   {
+    "nodeId": 2,
+    "nodeName": "WholeStageCodegen (2)",
+    "metrics": [
+     {
+      "name": "duration",
+      "value": "total (min, med, max (stageId: taskId))\n162 ms (31 ms, 32 ms, 34 ms (stage 18.0: task 86))"
+     }
+    ]
+   },
+   {
+    "nodeId": 1,
+    "nodeName": "AdaptiveSparkPlan",
+    "metrics": []
+   },
+   {
+    "nodeId": 0,
+    "nodeName": "OverwriteByExpression",
+    "metrics": []
+   }
+  ],
+  "edges": [
+   {
+    "fromId": 1,
+    "toId": 0
+   },
+   {
+    "fromId": 3,
+    "toId": 1
+   },
+   {
+    "fromId": 4,
+    "toId": 3
+   },
+   {
+    "fromId": 5,
+    "toId": 4
+   },
+   {
+    "fromId": 7,
+    "toId": 5
+   },
+   {
+    "fromId": 8,
+    "toId": 7
+   },
+   {
+    "fromId": 9,
+    "toId": 8
+   },
+   {
+    "fromId": 10,
+    "toId": 9
+   }
+  ]
+ },
+ {
+  "id": 81,
+  "status": "COMPLETED",
+  "description": "save at <unknown>:0",
+  "planDescription": "== Physical Plan ==\nOverwriteByExpression (14)\n+- AdaptiveSparkPlan (13)\n   +- == Final Plan ==\n      * HashAggregate (8)\n      +- AQEShuffleRead (7)\n         +- ShuffleQueryStage (6), Statistics(sizeInBytes=11.2 MiB, rowCount=2.10E+5)\n            +- Exchange (5)\n               +- * HashAggregate (4)\n                  +- * Project (3)\n                     +- * ColumnarToRow (2)\n                        +- Scan parquet  (1)\n   +- == Initial Plan ==\n      HashAggregate (12)\n      +- Exchange (11)\n         +- HashAggregate (10)\n            +- Project (9)\n               +- Scan parquet  (1)\n\n\n(1) Scan parquet \nOutput [6]: [tpep_pickup_datetime#8039, pulocationid#8045, fare_amount#8048, total_amount#8054, year#8066, month#8067]\nBatched: true\nLocation: InMemoryFileIndex [file:/D:/bigdata_project/data/clean_v2/yellow]\nPartitionFilters: [isnotnull(month#8067), (month#8067 <= 12)]\nReadSchema: struct<tpep_pickup_datetime:timestamp,pulocationid:int,fare_amount:double,total_amount:double>\n\n(2) ColumnarToRow [codegen id : 1]\nInput [6]: [tpep_pickup_datetime#8039, pulocationid#8045, fare_amount#8048, total_amount#8054, year#8066, month#8067]\n\n(3) Project [codegen id : 1]\nOutput [4]: [pulocationid#8045, fare_amount#8048, total_amount#8054, cast(tpep_pickup_datetime#8039 as date) AS _groupingexpression#8124]\nInput [6]: [tpep_pickup_datetime#8039, pulocationid#8045, fare_amount#8048, total_amount#8054, year#8066, month#8067]\n\n(4) HashAggregate [codegen id : 1]\nInput [4]: [pulocationid#8045, fare_amount#8048, total_amount#8054, _groupingexpression#8124]\nKeys [2]: [_groupingexpression#8124, pulocationid#8045]\nFunctions [3]: [partial_count(1), partial_sum(total_amount#8054), partial_avg(fare_amount#8048)]\nAggregate Attributes [4]: [count#8125L, sum#8126, sum#8127, count#8128L]\nResults [6]: [_groupingexpression#8124, pulocationid#8045, count#8129L, sum#8130, sum#8131, count#8132L]\n\n(5) Exchange\nInput [6]: [_groupingexpression#8124, pulocationid#8045, count#8129L, sum#8130, sum#8131, count#8132L]\nArguments: hashpartitioning(_groupingexpression#8124, pulocationid#8045, 16), ENSURE_REQUIREMENTS, [plan_id=4641]\n\n(6) ShuffleQueryStage\nOutput [6]: [_groupingexpression#8124, pulocationid#8045, count#8129L, sum#8130, sum#8131, count#8132L]\nArguments: 0\n\n(7) AQEShuffleRead\nInput [6]: [_groupingexpression#8124, pulocationid#8045, count#8129L, sum#8130, sum#8131, count#8132L]\nArguments: coalesced\n\n(8) HashAggregate [codegen id : 2]\nInput [6]: [_groupingexpression#8124, pulocationid#8045, count#8129L, sum#8130, sum#8131, count#8132L]\nKeys [2]: [_groupingexpression#8124, pulocationid#8045]\nFunctions [3]: [count(1), sum(total_amount#8054), avg(fare_amount#8048)]\nAggregate Attributes [3]: [count(1)#8108L, sum(total_amount#8054)#8110, avg(fare_amount#8048)#8112]\nResults [5]: [_groupingexpression#8124 AS d#8103, pulocationid#8045, count(1)#8108L AS trips#8109L, sum(total_amount#8054)#8110 AS revenue#8111, avg(fare_amount#8048)#8112 AS avg_fare#8113]\n\n(9) Project\nOutput [4]: [pulocationid#8045, fare_amount#8048, total_amount#8054, cast(tpep_pickup_datetime#8039 as date) AS _groupingexpression#8124]\nInput [6]: [tpep_pickup_datetime#8039, pulocationid#8045, fare_amount#8048, total_amount#8054, year#8066, month#8067]\n\n(10) HashAggregate\nInput [4]: [pulocationid#8045, fare_amount#8048, total_amount#8054, _groupingexpression#8124]\nKeys [2]: [_groupingexpression#8124, pulocationid#8045]\nFunctions [3]: [partial_count(1), partial_sum(total_amount#8054), partial_avg(fare_amount#8048)]\nAggregate Attributes [4]: [count#8125L, sum#8126, sum#8127, count#8128L]\nResults [6]: [_groupingexpression#8124, pulocationid#8045, count#8129L, sum#8130, sum#8131, count#8132L]\n\n(11) Exchange\nInput [6]: [_groupingexpression#8124, pulocationid#8045, count#8129L, sum#8130, sum#8131, count#8132L]\nArguments: hashpartitioning(_groupingexpression#8124, pulocationid#8045, 16), ENSURE_REQUIREMENTS, [plan_id=4622]\n\n(12) HashAggregate\nInput [6]: [_groupingexpression#8124, pulocationid#8045, count#8129L, sum#8130, sum#8131, count#8132L]\nKeys [2]: [_groupingexpression#8124, pulocationid#8045]\nFunctions [3]: [count(1), sum(total_amount#8054), avg(fare_amount#8048)]\nAggregate Attributes [3]: [count(1)#8108L, sum(total_amount#8054)#8110, avg(fare_amount#8048)#8112]\nResults [5]: [_groupingexpression#8124 AS d#8103, pulocationid#8045, count(1)#8108L AS trips#8109L, sum(total_amount#8054)#8110 AS revenue#8111, avg(fare_amount#8048)#8112 AS avg_fare#8113]\n\n(13) AdaptiveSparkPlan\nOutput [5]: [d#8103, pulocationid#8045, trips#8109L, revenue#8111, avg_fare#8113]\nArguments: isFinalPlan=true\n\n(14) OverwriteByExpression\nInput [5]: [d#8103, pulocationid#8045, trips#8109L, revenue#8111, avg_fare#8113]\nArguments: org.apache.spark.sql.execution.datasources.v2.DataSourceV2Strategy$$Lambda$3473/72586714@109fde38, org.apache.spark.sql.execution.datasources.noop.NoopWrite$@fefcced\n\n",
+  "submissionTime": "2026-10-20T04:16:13.622GMT",
+  "duration": 1917,
+  "runningJobIds": [],
+  "successJobIds": [
+   14,
+   15
+  ],
+  "failedJobIds": [],
+  "nodes": [
+   {
+    "nodeId": 10,
+    "nodeName": "Scan parquet",
+    "metrics": [
+     {
+      "name": "number of files read",
+      "value": "192"
+     },
+     {
+      "name": "scan time",
+      "value": "total (min, med, max (stageId: taskId))\n2.4 s (47 ms, 145 ms, 186 ms (stage 20.0: task 93))"
+     },
+     {
+      "name": "dynamic partition pruning time",
+      "value": "0 ms"
+     },
+     {
+      "name": "metadata time",
+      "value": "0 ms"
+     },
+     {
+      "name": "size of files read",
+      "value": "1372.6 MiB"
+     },
+     {
+      "name": "number of output rows",
+      "value": "40,276,762"
+     },
+     {
+      "name": "number of partitions read",
+      "value": "12"
+     }
+    ]
+   },
+   {
+    "nodeId": 9,
+    "nodeName": "ColumnarToRow",
+    "wholeStageCodegenId": 1,
+    "metrics": [
+     {
+      "name": "number of output rows",
+      "value": "40,276,762"
+     },
+     {
+      "name": "number of input batches",
+      "value": "9,930"
+     }
+    ]
+   },
+   {
+    "nodeId": 8,
+    "nodeName": "Project",
+    "wholeStageCodegenId": 1,
+    "metrics": []
+   },
+   {
+    "nodeId": 7,
+    "nodeName": "HashAggregate",
+    "wholeStageCodegenId": 1,
+    "metrics": [
+     {
+      "name": "spill size",
+      "value": "0.0 B"
+     },
+     {
+      "name": "time in aggregation build",
+      "value": "total (min, med, max (stageId: taskId))\n12.4 s (281 ms, 768 ms, 840 ms (stage 20.0: task 92))"
+     },
+     {
+      "name": "peak memory",
+      "value": "total (min, med, max (stageId: taskId))\n142.8 MiB (8.3 MiB, 8.5 MiB, 8.5 MiB (stage 20.0: task 94))"
+     },
+     {
+      "name": "number of output rows",
+      "value": "209,742"
+     },
+     {
+      "name": "number of sort fallback tasks",
+      "value": "0"
+     },
+     {
+      "name": "avg hash probes per key",
+      "value": "(min, med, max (stageId: taskId)):\n(1, 1.1, 1.3 (stage 20.0: task 95))"
+     }
+    ]
+   },
+   {
+    "nodeId": 6,
+    "nodeName": "WholeStageCodegen (1)",
+    "metrics": [
+     {
+      "name": "duration",
+      "value": "total (min, med, max (stageId: taskId))\n12.6 s (287 ms, 778 ms, 853 ms (stage 20.0: task 92))"
+     }
+    ]
+   },
+   {
+    "nodeId": 5,
+    "nodeName": "Exchange",
+    "metrics": [
+     {
+      "name": "shuffle records written",
+      "value": "209,742"
+     },
+     {
+      "name": "local merged chunks fetched",
+      "value": "0"
+     },
+     {
+      "name": "shuffle write time",
+      "value": "total (min, med, max (stageId: taskId))\n345 ms (9 ms, 20 ms, 29 ms (stage 20.0: task 94))"
+     },
+     {
+      "name": "remote merged bytes read",
+      "value": "0.0 B"
+     },
+     {
+      "name": "local merged blocks fetched",
+      "value": "0"
+     },
+     {
+      "name": "corrupt merged block chunks",
+      "value": "0"
+     },
+     {
+      "name": "remote merged reqs duration",
+      "value": "0 ms"
+     },
+     {
+      "name": "remote merged blocks fetched",
+      "value": "0"
+     },
+     {
+      "name": "records read",
+      "value": "209,742"
+     },
+     {
+      "name": "local bytes read",
+      "value": "total (min, med, max (stageId: taskId))\n5.2 MiB (987.5 KiB, 992.7 KiB, 1320.5 KiB (stage 22.0: task 109))"
+     },
+     {
+      "name": "fetch wait time",
+      "value": "total (min, med, max (stageId: taskId))\n0 ms (0 ms, 0 ms, 0 ms (stage 22.0: task 106))"
+     },
+     {
+      "name": "remote bytes read",
+      "value": "0.0 B"
+     },
+     {
+      "name": "merged fetch fallback count",
+      "value": "0"
+     },
+     {
+      "name": "local blocks read",
+      "value": "85"
+     },
+     {
+      "name": "remote merged chunks fetched",
+      "value": "0"
+     },
+     {
+      "name": "remote blocks read",
+      "value": "0"
+     },
+     {
+      "name": "data size",
+      "value": "total (min, med, max (stageId: taskId))\n11.2 MiB (365.8 KiB, 689.4 KiB, 1020.0 KiB (stage 20.0: task 92))"
+     },
+     {
+      "name": "local merged bytes read",
+      "value": "0.0 B"
+     },
+     {
+      "name": "number of partitions",
+      "value": "16"
+     },
+     {
+      "name": "remote reqs duration",
+      "value": "0 ms"
+     },
+     {
+      "name": "remote bytes read to disk",
+      "value": "0.0 B"
+     },
+     {
+      "name": "shuffle bytes written",
+      "value": "total (min, med, max (stageId: taskId))\n5.2 MiB (170.3 KiB, 316.9 KiB, 465.6 KiB (stage 20.0: task 92))"
+     }
+    ]
+   },
+   {
+    "nodeId": 4,
+    "nodeName": "AQEShuffleRead",
+    "metrics": [
+     {
+      "name": "number of partitions",
+      "value": "5"
+     },
+     {
+      "name": "partition data size",
+      "value": "total (min, med, max (stageId: taskId))\n5.4 MiB (1029.5 KiB, 1045.1 KiB, 1387.7 KiB (driver))"
+     },
+     {
+      "name": "number of coalesced partitions",
+      "value": "5"
+     }
+    ]
+   },
+   {
+    "nodeId": 3,
+    "nodeName": "HashAggregate",
+    "wholeStageCodegenId": 2,
+    "metrics": [
+     {
+      "name": "spill size",
+      "value": "0.0 B"
+     },
+     {
+      "name": "time in aggregation build",
+      "value": "total (min, med, max (stageId: taskId))\n70 ms (13 ms, 13 ms, 17 ms (stage 22.0: task 109))"
+     },
+     {
+      "name": "peak memory",
+      "value": "total (min, med, max (stageId: taskId))\n43.0 MiB (8.5 MiB, 8.5 MiB, 9.0 MiB (stage 22.0: task 109))"
+     },
+     {
+      "name": "number of output rows",
+      "value": "84,633"
+     },
+     {
+      "name": "number of sort fallback tasks",
+      "value": "0"
+     },
+     {
+      "name": "avg hash probes per key",
+      "value": "(min, med, max (stageId: taskId)):\n(1.4, 1.5, 1.5 (stage 22.0: task 106))"
+     }
+    ]
+   },
+   {
+    "nodeId": 2,
+    "nodeName": "WholeStageCodegen (2)",
+    "metrics": [
+     {
+      "name": "duration",
+      "value": "total (min, med, max (stageId: taskId))\n76 ms (14 ms, 15 ms, 18 ms (stage 22.0: task 109))"
+     }
+    ]
+   },
+   {
+    "nodeId": 1,
+    "nodeName": "AdaptiveSparkPlan",
+    "metrics": []
+   },
+   {
+    "nodeId": 0,
+    "nodeName": "OverwriteByExpression",
+    "metrics": []
+   }
+  ],
+  "edges": [
+   {
+    "fromId": 1,
+    "toId": 0
+   },
+   {
+    "fromId": 3,
+    "toId": 1
+   },
+   {
+    "fromId": 4,
+    "toId": 3
+   },
+   {
+    "fromId": 5,
+    "toId": 4
+   },
+   {
+    "fromId": 7,
+    "toId": 5
+   },
+   {
+    "fromId": 8,
+    "toId": 7
+   },
+   {
+    "fromId": 9,
+    "toId": 8
+   },
+   {
+    "fromId": 10,
+    "toId": 9
+   }
+  ]
+ }
+]

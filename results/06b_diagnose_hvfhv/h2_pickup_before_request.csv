@@ -1,0 +1,5 @@
+company,month,rows,pickup_before_request,neg_and_on_scene_null,neg_wait_s_median,neg_wait_s_p1,wait_s_min,wait_s_median_all,neg_pct
+Lyft,1,5231175,93753,87470,-900,-1348,-2863,234,1.792
+Lyft,2,4949843,101917,95033,-900,-1324,-2860,236,2.059
+Uber,1,14432755,94498,0,-687,-1469,-2317,216,0.655
+Uber,2,14409305,97303,0,-742,-1484,-2430,222,0.675

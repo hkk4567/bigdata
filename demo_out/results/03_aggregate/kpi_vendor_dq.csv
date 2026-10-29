@@ -1,0 +1,7 @@
+year,month,vendorid,vendor_label,trips,zero_distance_pct,flex_share_pct,total_mismatch_pct,avg_fare
+2024,1,1,Creative Mobile,93515,0.000,0.000,92.040,11.869
+2024,1,2,Curb Mobility,93798,0.000,0.000,92.127,11.869
+2024,2,1,Creative Mobile,93477,0.000,0.000,92.031,11.891
+2024,2,2,Curb Mobility,93793,0.001,0.000,91.983,11.881
+2024,3,1,Creative Mobile,94143,0.000,0.000,92.219,11.903
+2024,3,2,Curb Mobility,93028,0.001,0.000,92.155,11.872

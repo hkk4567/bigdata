@@ -1,0 +1,3 @@
+year,month,rows,min_pickup,max_pickup,pickup_outside_month,avg_miles,avg_trip_min,avg_base_fare,avg_driver_pay,sum_base_fare
+2024,1,19663930,2024-01-01 00:00:00,2024-01-31 23:59:59,0,4.839,18.508,23.959,18.269,471132933.49
+2024,2,19359148,2024-02-01 00:00:00,2024-02-29 23:59:59,0,4.931,19.199,24.269,19.073,469819612.74

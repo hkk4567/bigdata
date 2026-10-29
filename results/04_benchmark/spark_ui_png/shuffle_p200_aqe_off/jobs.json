@@ -1,0 +1,97 @@
+[
+ {
+  "jobId": 3,
+  "name": "save at NativeMethodAccessorImpl.java:0",
+  "description": "E3 partitions=200 AQE=off",
+  "submissionTime": "2026-10-22T12:22:49.318GMT",
+  "completionTime": "2026-10-22T12:22:57.037GMT",
+  "stageIds": [
+   5,
+   4
+  ],
+  "jobTags": [],
+  "status": "SUCCEEDED",
+  "numTasks": 217,
+  "numActiveTasks": 0,
+  "numCompletedTasks": 217,
+  "numSkippedTasks": 0,
+  "numFailedTasks": 0,
+  "numKilledTasks": 0,
+  "numCompletedIndices": 217,
+  "numActiveStages": 0,
+  "numCompletedStages": 2,
+  "numSkippedStages": 0,
+  "numFailedStages": 0,
+  "killedTasksSummary": {}
+ },
+ {
+  "jobId": 2,
+  "name": "parquet at NativeMethodAccessorImpl.java:0",
+  "submissionTime": "2026-10-22T12:22:49.204GMT",
+  "completionTime": "2026-10-22T12:22:49.229GMT",
+  "stageIds": [
+   3
+  ],
+  "jobTags": [],
+  "status": "SUCCEEDED",
+  "numTasks": 1,
+  "numActiveTasks": 0,
+  "numCompletedTasks": 1,
+  "numSkippedTasks": 0,
+  "numFailedTasks": 0,
+  "numKilledTasks": 0,
+  "numCompletedIndices": 1,
+  "numActiveStages": 0,
+  "numCompletedStages": 1,
+  "numSkippedStages": 0,
+  "numFailedStages": 0,
+  "killedTasksSummary": {}
+ },
+ {
+  "jobId": 1,
+  "name": "collect at D:\\bigdata_project\\jobs\\04c_capture_spark_ui.py:86",
+  "submissionTime": "2026-10-22T12:22:47.748GMT",
+  "completionTime": "2026-10-22T12:22:48.997GMT",
+  "stageIds": [
+   1,
+   2
+  ],
+  "jobTags": [],
+  "status": "SUCCEEDED",
+  "numTasks": 217,
+  "numActiveTasks": 0,
+  "numCompletedTasks": 217,
+  "numSkippedTasks": 0,
+  "numFailedTasks": 0,
+  "numKilledTasks": 0,
+  "numCompletedIndices": 217,
+  "numActiveStages": 0,
+  "numCompletedStages": 2,
+  "numSkippedStages": 0,
+  "numFailedStages": 0,
+  "killedTasksSummary": {}
+ },
+ {
+  "jobId": 0,
+  "name": "parquet at NativeMethodAccessorImpl.java:0",
+  "submissionTime": "2026-10-22T12:22:47.596GMT",
+  "completionTime": "2026-10-22T12:22:47.652GMT",
+  "stageIds": [
+   0
+  ],
+  "jobTags": [],
+  "status": "SUCCEEDED",
+  "numTasks": 1,
+  "numActiveTasks": 0,
+  "numCompletedTasks": 1,
+  "numSkippedTasks": 0,
+  "numFailedTasks": 0,
+  "numKilledTasks": 0,
+  "numCompletedIndices": 1,
+  "numActiveStages": 0,
+  "numCompletedStages": 1,
+  "numSkippedStages": 0,
+  "numFailedStages": 0,
+  "killedTasksSummary": {}
+ }
+]

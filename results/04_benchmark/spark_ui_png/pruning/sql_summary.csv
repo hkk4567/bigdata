@@ -1,0 +1,5 @@
+id,status,description,duration,runningJobIds,successJobIds,failedJobIds
+0,COMPLETED,collect at D:\bigdata_project\jobs\04c_capture_spark_ui.py:86,3997,[],"[1, 2]",[]
+1,COMPLETED,warm-up: đọc metadata,195,[],"[4, 5]",[]
+2,COMPLETED,E2 partition_filter month=6,536,[],"[8, 9]",[]
+3,COMPLETED,E2 function_filter month=6,5058,[],"[10, 11]",[]

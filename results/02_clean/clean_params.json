@@ -1,0 +1,17 @@
+{
+  "type": "yellow",
+  "lake": "D:\\bigdata_project\\data\\lake",
+  "clean": "D:\\bigdata_project\\data\\clean",
+  "results": null,
+  "start": null,
+  "end": null,
+  "max_duration_h": 24.0,
+  "max_distance": 100.0,
+  "max_speed": 100.0,
+  "max_fare": 500.0,
+  "max_total": 1000.0,
+  "max_passengers": 6,
+  "cores": 2,
+  "driver_mem": "3g",
+  "zone_ids": 265
+}

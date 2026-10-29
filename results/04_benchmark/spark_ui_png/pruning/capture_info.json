@@ -1,0 +1,9 @@
+{
+ "ui": "http://DESKTOP-6HPGKP3.mshome.net:4040",
+ "app_id": "local-1792671686753",
+ "tag": "pruning",
+ "jobs": 12,
+ "stages": 16,
+ "sql_queries": 4,
+ "screenshots": 15
+}

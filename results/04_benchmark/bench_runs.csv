@@ -1,0 +1,86 @@
+experiment,config,run,is_warmup,rows,seconds,rows_per_s,note
+scale,spark_1m,0,True,2921201,1.051,2780509,"check trips=2,921,201 revenue=80,151,049"
+scale,spark_1m,1,False,2921201,0.701,4168464,
+scale,spark_1m,2,False,2921201,0.482,6066241,
+scale,spark_1m,3,False,2921201,0.452,6469299,
+scale,spark_3m,0,True,9389058,0.995,9433092,"check trips=9,389,058 revenue=259,024,303"
+scale,spark_3m,1,False,9389058,1.016,9241377,
+scale,spark_3m,2,False,9389058,0.991,9477187,
+scale,spark_3m,3,False,9389058,0.900,10437177,
+scale,spark_6m,0,True,19938934,1.700,11727804,"check trips=19,938,934 revenue=562,837,509"
+scale,spark_6m,1,False,19938934,1.806,11039224,
+scale,spark_6m,2,False,19938934,1.827,10914692,
+scale,spark_6m,3,False,19938934,1.880,10607243,
+scale,spark_12m,0,True,40276762,3.150,12786794,"check trips=40,276,762 revenue=1,159,028,317"
+scale,spark_12m,1,False,40276762,3.728,10803821,
+scale,spark_12m,2,False,40276762,3.561,11309636,
+scale,spark_12m,3,False,40276762,3.438,11714147,
+scale,pandas_1m,0,True,2921201,0.488,5983668,"check trips=2,921,201 revenue=80,151,049"
+scale,pandas_1m,1,False,2921201,0.300,9753466,
+scale,pandas_1m,2,False,2921201,0.358,8156619,
+scale,pandas_1m,3,False,2921201,0.546,5345383,
+scale,pandas_3m,0,True,9389058,1.094,8580401,"check trips=9,389,058 revenue=259,024,303"
+scale,pandas_3m,1,False,9389058,1.124,8349863,
+scale,pandas_3m,2,False,9389058,1.090,8617061,
+scale,pandas_3m,3,False,9389058,1.140,8235558,
+scale,pandas_6m,0,True,19938934,2.025,9844859,"check trips=19,938,934 revenue=562,837,509"
+scale,pandas_6m,1,False,19938934,2.071,9628872,
+scale,pandas_6m,2,False,19938934,2.226,8957722,
+scale,pandas_6m,3,False,19938934,2.139,9321031,
+shuffle,partitions=2 (AQE off),0,True,40276762,5.225,7709034,"check trips=40,276,762 revenue=1,159,028,317"
+shuffle,partitions=2 (AQE off),1,False,40276762,6.234,6461301,
+shuffle,partitions=2 (AQE off),2,False,40276762,5.790,6955827,
+shuffle,partitions=2 (AQE off),3,False,40276762,3.479,11577036,
+shuffle,partitions=8 (AQE off),0,True,40276762,3.077,13088492,"check trips=40,276,762 revenue=1,159,028,317"
+shuffle,partitions=8 (AQE off),1,False,40276762,3.516,11454813,
+shuffle,partitions=8 (AQE off),2,False,40276762,3.626,11108765,
+shuffle,partitions=8 (AQE off),3,False,40276762,3.636,11076234,
+shuffle,partitions=16 (AQE off),0,True,40276762,3.319,12135839,"check trips=40,276,762 revenue=1,159,028,317"
+shuffle,partitions=16 (AQE off),1,False,40276762,3.633,11085754,
+shuffle,partitions=16 (AQE off),2,False,40276762,3.521,11438102,
+shuffle,partitions=16 (AQE off),3,False,40276762,3.571,11280214,
+shuffle,partitions=64 (AQE off),0,True,40276762,3.866,10418494,"check trips=40,276,762 revenue=1,159,028,317"
+shuffle,partitions=64 (AQE off),1,False,40276762,4.103,9816140,
+shuffle,partitions=64 (AQE off),2,False,40276762,4.003,10060571,
+shuffle,partitions=64 (AQE off),3,False,40276762,4.065,9907003,
+shuffle,partitions=200 (AQE off),0,True,40276762,5.668,7105896,"check trips=40,276,762 revenue=1,159,028,317"
+shuffle,partitions=200 (AQE off),1,False,40276762,5.510,7309996,
+shuffle,partitions=200 (AQE off),2,False,40276762,5.524,7291615,
+shuffle,partitions=200 (AQE off),3,False,40276762,5.458,7379042,
+shuffle,partitions=200 (AQE on),0,True,40276762,4.330,9301835,"check trips=40,276,762 revenue=1,159,028,317"
+shuffle,partitions=200 (AQE on),1,False,40276762,4.652,8658351,
+shuffle,partitions=200 (AQE on),2,False,40276762,4.848,8307688,
+shuffle,partitions=200 (AQE on),3,False,40276762,4.704,8561377,
+format,parquet_3m,0,True,9389058,0.833,11273404,"check trips=9,389,058 revenue=259,024,303"
+format,parquet_3m,1,False,9389058,0.895,10492163,
+format,parquet_3m,2,False,9389058,0.870,10786541,
+format,parquet_3m,3,False,9389058,0.926,10142307,
+format,csv_3m,0,True,9389058,13.767,681977,"check trips=9,389,058 revenue=259,024,303"
+format,csv_3m,1,False,9389058,13.650,687822,
+format,csv_3m,2,False,9389058,13.653,687693,
+format,csv_3m,3,False,9389058,13.959,672596,
+format,disk_bytes,0,True,9389058,,,parquet=336834291 csv=1950446398 ratio_csv/parquet=5.79
+pruning,partition_filter month=6,0,True,3462060,0.171,20272165,"n=3,462,060"
+pruning,partition_filter month=6,1,False,3462060,0.145,23795192,"n=3,462,060"
+pruning,partition_filter month=6,2,False,3462060,0.157,22038942,"n=3,462,060"
+pruning,partition_filter month=6,3,False,3462060,0.173,20030398,"n=3,462,060"
+pruning,function_filter month=6,0,True,3462060,2.345,1476130,"n=3,462,060"
+pruning,function_filter month=6,1,False,3462060,2.201,1573296,"n=3,462,060"
+pruning,function_filter month=6,2,False,3462060,2.068,1673851,"n=3,462,060"
+pruning,function_filter month=6,3,False,3462060,2.070,1672625,"n=3,462,060"
+cores,local[1],0,True,40276762,5.959,6759452,"check trips=40,276,762 revenue=1,159,028,317"
+cores,local[1],1,False,40276762,6.346,6347128,
+cores,local[1],2,False,40276762,5.974,6742557,
+cores,local[1],3,False,40276762,6.105,6596968,
+cores,local[2],0,True,40276762,3.290,12243007,"check trips=40,276,762 revenue=1,159,028,317"
+cores,local[2],1,False,40276762,3.724,10816877,
+cores,local[2],2,False,40276762,3.474,11593749,
+cores,local[2],3,False,40276762,3.460,11641736,
+cores,local[4],0,True,40276762,2.539,15861297,"check trips=40,276,762 revenue=1,159,028,317"
+cores,local[4],1,False,40276762,2.453,16416465,
+cores,local[4],2,False,40276762,2.325,17324406,
+cores,local[4],3,False,40276762,2.309,17444907,
+cores,local[8],0,True,40276762,2.161,18633739,"check trips=40,276,762 revenue=1,159,028,317"
+cores,local[8],1,False,40276762,2.141,18808038,
+cores,local[8],2,False,40276762,2.120,18995627,
+cores,local[8],3,False,40276762,2.025,19890565,

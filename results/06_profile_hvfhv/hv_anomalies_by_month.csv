@@ -1,0 +1,3 @@
+year,month,rows,miles_le_0,time_le_0,fare_le_0,driver_pay_lt_0,tips_lt_0,dropoff_before_pickup,pickup_outside_month,pickup_before_request,wait_gt_1h,time_gt_6h,miles_gt_100,speed_gt_80mph,trip_time_vs_timestamps_gt_60s,driver_pay_gt_1_5x_fare
+2024,1,19663930,3286,2,7334,137,0,0,0,188251,587,90,1660,27,0,78465
+2024,2,19359148,3082,3,8588,106,0,0,0,199220,331,42,1284,29,0,318417

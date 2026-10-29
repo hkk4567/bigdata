@@ -1,0 +1,5 @@
+company,month,rows,originating_base_num_null,on_scene_null,orig_null_pct,on_scene_null_pct
+Lyft,1,5231175,5218737,5218737,99.762,99.762
+Lyft,2,4949843,4936887,4936887,99.738,99.738
+Uber,1,14432755,0,0,0.0,0.0
+Uber,2,14409305,0,0,0.0,0.0

@@ -1,0 +1,16 @@
+timestamp,file,status,bytes,seconds
+2026-10-18T19:47:46,yellow_tripdata_2024-01.parquet,downloaded,49961641,2.72
+2026-10-18T19:47:47,yellow_tripdata_2024-02.parquet,downloaded,50349284,1.09
+2026-10-18T19:47:48,yellow_tripdata_2024-03.parquet,downloaded,60078280,1.17
+2026-10-18T19:47:49,yellow_tripdata_2024-04.parquet,downloaded,59133625,1.07
+2026-10-18T19:47:50,yellow_tripdata_2024-05.parquet,downloaded,62553128,1.16
+2026-10-18T19:47:51,yellow_tripdata_2024-06.parquet,downloaded,59859922,1.02
+2026-10-18T19:47:52,yellow_tripdata_2024-07.parquet,downloaded,52299432,0.84
+2026-10-18T19:47:53,yellow_tripdata_2024-08.parquet,downloaded,51067350,0.88
+2026-10-18T19:47:54,yellow_tripdata_2024-09.parquet,downloaded,61170186,1.13
+2026-10-18T19:47:56,yellow_tripdata_2024-10.parquet,downloaded,64346071,1.28
+2026-10-18T19:47:57,yellow_tripdata_2024-11.parquet,downloaded,60658709,1.37
+2026-10-18T19:47:58,yellow_tripdata_2024-12.parquet,downloaded,61524085,1.43
+2026-10-18T19:47:59,taxi_zone_lookup.csv,downloaded,12331,0.13
+2026-10-21T13:19:14,fhvhv_tripdata_2024-01.parquet,downloaded,472757547,8.45
+2026-10-21T13:19:20,fhvhv_tripdata_2024-02.parquet,downloaded,462475428,6.24

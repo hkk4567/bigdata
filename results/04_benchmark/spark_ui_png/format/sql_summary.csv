@@ -1,0 +1,4 @@
+id,status,description,duration,runningJobIds,successJobIds,failedJobIds
+10,COMPLETED,collect at D:\bigdata_project\jobs\04c_capture_spark_ui.py:86,590,[],"[1, 2]",[]
+11,COMPLETED,E1 parquet_3m,1489,[],"[5, 6]",[]
+12,COMPLETED,E1 csv_3m,32214,[],"[7, 8]",[]

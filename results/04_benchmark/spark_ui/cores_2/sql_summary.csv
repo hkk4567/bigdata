@@ -1,0 +1,6 @@
+id,status,description,duration,runningJobIds,successJobIds,failedJobIds
+67,COMPLETED,count at <unknown>:0,190,[],"[1, 2]",[]
+68,COMPLETED,first at D:\bigdata_project\jobs\04_benchmark.py:126,3179,[],"[4, 5, 6]",[]
+69,COMPLETED,save at <unknown>:0,3631,[],"[8, 9]",[]
+70,COMPLETED,save at <unknown>:0,3332,[],"[11, 12]",[]
+71,COMPLETED,save at <unknown>:0,3355,[],"[14, 15]",[]

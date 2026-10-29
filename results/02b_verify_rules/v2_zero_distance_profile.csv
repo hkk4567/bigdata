@@ -1,0 +1,46 @@
+dimension,value,rows,avg_fare,avg_duration_s,pct,value_label
+month,12,75450,24.52,699.0,9.719,
+month,10,81638,23.49,719.7,10.516,
+month,9,81121,23.83,778.1,10.45,
+month,3,87168,21.83,716.9,11.229,
+month,11,68315,23.63,709.5,8.8,
+month,8,57413,26.15,588.9,7.396,
+month,6,52954,25.5,531.4,6.821,
+month,5,49791,33.08,514.5,6.414,
+month,2,68225,21.93,662.9,8.788,
+month,4,45813,24.46,527.3,5.901,
+month,7,48044,25.88,493.0,6.189,
+month,1,60371,23.71,611.5,7.777,
+vendorid,2,481316,25.71,560.6,62.001,Curb Mobility
+vendorid,1,294985,22.49,790.8,37.999,Creative Mobile
+vendorid,7,2,18.5,0.0,0.0,Helix
+payment_type,3,60966,5.03,110.6,7.853,No charge
+payment_type,0,272689,20.25,1063.0,35.127,Flex Fare
+payment_type,2,117726,15.53,392.5,15.165,Cash
+payment_type,4,61637,7.55,72.4,7.94,Dispute
+payment_type,1,263281,41.35,591.9,33.915,Credit card
+payment_type,5,4,15.5,0.0,0.001,Unknown
+ratecodeid,3,7877,14.29,126.5,1.015,
+ratecodeid,6,48,73.3,23.3,0.006,
+ratecodeid,2,40973,40.69,291.1,5.278,
+ratecodeid,4,367,18.38,552.1,0.047,
+ratecodeid,1,279715,7.12,484.0,36.032,
+ratecodeid,5,147456,56.95,84.2,18.995,
+ratecodeid,null,272689,20.25,1063.0,35.127,
+ratecodeid,99,27178,48.14,1926.0,3.501,
+same_zone,pu!=do,403181,22.26,1161.6,51.936,
+same_zone,pu==do,373122,26.89,93.2,48.064,
+duration_bucket,<1 phút,331375,28.55,15.3,42.686,
+duration_bucket,5-15 phút,156106,12.69,614.3,20.109,
+duration_bucket,1-5 phút,63716,23.29,145.0,8.208,
+duration_bucket,<=0s,11124,31.28,-0.1,1.433,
+duration_bucket,>60 phút,8515,53.72,8556.0,1.097,
+duration_bucket,15-60 phút,205467,25.69,1557.7,26.467,
+fare_bucket,"(0,3]",134948,2.88,212.7,17.383,
+fare_bucket,<=0,61521,-19.61,193.1,7.925,
+fare_bucket,"(30,100]",180066,60.19,920.8,23.195,
+fare_bucket,"(10,30]",295840,18.64,870.0,38.109,
+fare_bucket,>100,14024,201.92,188.0,1.807,
+fare_bucket,"(3,10]",89904,7.13,408.4,11.581,
+rejected_only_by_dist_rule,chỉ luật này,703596,27.57,674.2,90.634,
+rejected_only_by_dist_rule,cùng luật khác,72707,-5.37,396.0,9.366,

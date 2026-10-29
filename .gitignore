@@ -1,0 +1,15 @@
+data/raw/*
+data/lake/*
+data/clean/*
+data/processed/*
+!data/*/.gitkeep
+spark-warehouse/
+metastore_db/
+__pycache__/
+.venv/
+*.pyc
+tools/
+data/clean_v2/*
+data/bench/*
+handoff/
+handoff_*.zip

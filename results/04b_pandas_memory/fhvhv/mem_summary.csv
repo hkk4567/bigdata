@@ -1,0 +1,7 @@
+engine,months,rows,ok_runs,status,median_query_s,median_peak_rss_gb,max_peak_rss_gb
+pandas_narrow,1,19663930,3,OK,1.489,2.241,2.288
+pandas_narrow,2,39023078,3,OK,2.772,4.262,4.266
+pandas_wide,1,19663930,3,OK,3.667,8.920,8.933
+pandas_wide,2,39023078,3,OK,19.941,10.359,11.285
+spark,1,19663930,3,OK,3.410,1.741,1.850
+spark,2,39023078,3,OK,4.410,1.977,1.994

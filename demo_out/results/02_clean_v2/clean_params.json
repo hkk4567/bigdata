@@ -1,0 +1,18 @@
+{
+  "type": "yellow",
+  "lake": "/tmp/tmp.kUSDhudJsR/data/lake",
+  "clean": "/tmp/tmp.kUSDhudJsR/data/clean_v2",
+  "results": null,
+  "start": null,
+  "end": null,
+  "max_duration_h": 6.0,
+  "max_distance": 100.0,
+  "max_speed": 80.0,
+  "min_fare": 3.0,
+  "max_fare": 500.0,
+  "max_total": 1000.0,
+  "max_passengers": 6,
+  "cores": 2,
+  "driver_mem": "3g",
+  "zone_ids": 265
+}

@@ -1,0 +1,22 @@
+experiment,config,rows,runs,median_s,min_s,max_s,rows_per_s_median
+scale,spark_1m,2921201,3,0.48,0.45,0.7,6060582
+scale,spark_3m,9389058,3,0.99,0.9,1.02,9474326
+scale,spark_6m,19938934,3,1.83,1.81,1.88,10913483
+scale,spark_12m,40276762,3,3.56,3.44,3.73,11310520
+scale,pandas_1m,2921201,3,0.36,0.3,0.55,8159779
+scale,pandas_3m,9389058,3,1.12,1.09,1.14,8353254
+scale,pandas_6m,19938934,3,2.14,2.07,2.23,9321614
+shuffle,partitions=2 (AQE off),40276762,3,5.79,3.48,6.23,6956262
+shuffle,partitions=8 (AQE off),40276762,3,3.63,3.52,3.64,11107766
+shuffle,partitions=16 (AQE off),40276762,3,3.57,3.52,3.63,11278846
+shuffle,partitions=64 (AQE off),40276762,3,4.07,4.0,4.1,9908182
+shuffle,partitions=200 (AQE off),40276762,3,5.51,5.46,5.52,7309757
+shuffle,partitions=200 (AQE on),40276762,3,4.7,4.65,4.85,8562236
+format,parquet_3m,9389058,3,0.9,0.87,0.93,10490567
+format,csv_3m,9389058,3,13.65,13.65,13.96,687691
+pruning,partition_filter month=6,3462060,3,0.16,0.14,0.17,22051337
+pruning,function_filter month=6,3462060,3,2.07,2.07,2.2,1672492
+cores,local[1],40276762,3,6.11,5.97,6.35,6597340
+cores,local[2],40276762,3,3.47,3.46,3.72,11593771
+cores,local[4],40276762,3,2.33,2.31,2.45,17323338
+cores,local[8],40276762,3,2.12,2.02,2.14,18998472

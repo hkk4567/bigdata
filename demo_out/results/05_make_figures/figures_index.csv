@@ -1,0 +1,7 @@
+figure,title,sources
+fig01_bench_scale.png,Quy mô dữ liệu: Spark so với Pandas,results/04_benchmark/bench_summary.csv
+fig03_bench_format.png,Parquet so với CSV,results/04_benchmark/bench_summary.csv; results/04_benchmark/bench_runs.csv; results/04_benchmark/spark_ui/format/stages_summary.csv
+fig06_kpi_daily_trips.png,Số chuyến theo ngày,results/03_aggregate/kpi_daily.csv
+fig07_kpi_hour_dow_heatmap.png,Nhiệt độ giờ × thứ,results/03_aggregate/kpi_hourly_dow.csv
+fig10_dq_vendor.png,Chất lượng dữ liệu theo nhà cung cấp,results/03_aggregate/kpi_vendor_dq.csv
+fig12_mem_pandas_vs_spark.png,RAM đỉnh và thời gian: Pandas so với Spark,results/04b_pandas_memory/mem_runs.csv

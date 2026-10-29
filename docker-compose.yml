@@ -1,0 +1,22 @@
+# Dùng:
+#   docker compose build
+#   docker compose run --rm app                                   # demo dữ liệu giả -> demo_out/
+#   docker compose run --rm app python scripts/download_data.py --start 2024-01 --end 2024-12
+#   docker compose run --rm app python jobs/01_ingest_to_lake.py
+#   docker compose run --rm app python jobs/02_clean_v2.py
+#   docker compose run --rm app python jobs/03_aggregate.py
+#   docker compose run --rm app python jobs/04_benchmark.py --quick
+#   docker compose run --rm app python jobs/05_make_figures.py
+# Dữ liệu và kết quả nằm trên máy bạn (volume), không nằm trong image.
+services:
+  app:
+    build: .
+    image: bigdata-project:latest
+    # Giới hạn RAM của container (mặc định 6 GB; đổi bằng biến môi trường, vd: APP_MEM=4g docker compose run --rm app)
+    mem_limit: ${APP_MEM:-6g}
+    volumes:
+      - ./data:/app/data
+      - ./results:/app/results
+      - ./demo_out:/app/demo_out
+    environment:
+      - PYTHONUNBUFFERED=1

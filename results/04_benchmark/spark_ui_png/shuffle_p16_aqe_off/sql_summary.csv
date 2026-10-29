@@ -1,0 +1,3 @@
+id,status,description,duration,runningJobIds,successJobIds,failedJobIds
+4,COMPLETED,collect at D:\bigdata_project\jobs\04c_capture_spark_ui.py:86,716,[],[1],[]
+5,COMPLETED,E3 partitions=16 AQE=off,5837,[],[3],[]

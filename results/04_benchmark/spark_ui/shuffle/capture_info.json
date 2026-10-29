@@ -1,0 +1,9 @@
+{
+ "ui": "http://DESKTOP-6HPGKP3:4040",
+ "app_id": "local-1792469251625",
+ "tag": "shuffle",
+ "jobs": 120,
+ "stages": 180,
+ "sql_queries": 45,
+ "screenshots": 35
+}

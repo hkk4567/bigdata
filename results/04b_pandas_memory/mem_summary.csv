@@ -1,0 +1,13 @@
+engine,months,rows,ok_runs,status,median_query_s,median_peak_rss_gb,max_peak_rss_gb
+pandas_narrow,1,2921201,3,OK,0.592,0.428,0.441
+pandas_narrow,3,9389058,3,OK,1.063,1.101,1.108
+pandas_narrow,6,19938934,3,OK,1.771,2.160,2.188
+pandas_narrow,12,40276762,3,OK,3.155,4.189,4.268
+pandas_wide,1,2921201,3,OK,0.709,1.443,1.457
+pandas_wide,3,9389058,3,OK,1.761,4.271,4.285
+pandas_wide,6,19938934,3,OK,5.522,8.300,8.828
+pandas_wide,12,40276762,3,OK,20.328,10.154,11.022
+spark,1,2921201,3,OK,2.220,1.079,1.126
+spark,3,9389058,3,OK,2.989,1.130,1.174
+spark,6,19938934,3,OK,4.097,1.322,1.582
+spark,12,40276762,3,OK,6.328,1.557,1.641

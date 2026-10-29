@@ -1,0 +1,13 @@
+stageId,attemptId,name,status,numTasks,submissionTime,completionTime,executorRunTime,inputBytes,inputRecords,outputBytes,shuffleReadBytes,shuffleReadRecords,shuffleWriteBytes,shuffleWriteRecords,memoryBytesSpilled,diskBytesSpilled
+11,0,save at NativeMethodAccessorImpl.java:0,COMPLETE,2,2026-10-22T12:24:27.368GMT,2026-10-22T12:24:27.435GMT,98,0,0,0,2380029,94071,0,0,0,0
+10,0,save at NativeMethodAccessorImpl.java:0,SKIPPED,16,,,0,0,0,0,0,0,0,0,0,0
+9,0,save at NativeMethodAccessorImpl.java:0,COMPLETE,16,2026-10-22T12:23:55.347GMT,2026-10-22T12:24:27.334GMT,61946,1951331114,9389058,0,0,0,2380029,94071,0,0
+8,0,save at NativeMethodAccessorImpl.java:0,COMPLETE,1,2026-10-22T12:23:55.024GMT,2026-10-22T12:23:55.100GMT,67,0,0,0,1076708,41665,0,0,0,0
+7,0,save at NativeMethodAccessorImpl.java:0,SKIPPED,5,,,0,0,0,0,0,0,0,0,0,0
+6,0,save at NativeMethodAccessorImpl.java:0,COMPLETE,5,2026-10-22T12:23:53.643GMT,2026-10-22T12:23:55.007GMT,2652,121111942,9389058,0,0,0,1076708,41665,0,0
+5,0,parquet at NativeMethodAccessorImpl.java:0,COMPLETE,1,2026-10-22T12:23:53.533GMT,2026-10-22T12:23:53.552GMT,1,0,0,0,0,0,0,0,0,0
+4,0,parquet at NativeMethodAccessorImpl.java:0,COMPLETE,1,2026-10-22T12:23:53.381GMT,2026-10-22T12:23:53.422GMT,5,0,0,0,0,0,0,0,0,0
+3,0,collect at D:\bigdata_project\jobs\04c_capture_spark_ui.py:86,COMPLETE,1,2026-10-22T12:23:53.193GMT,2026-10-22T12:23:53.231GMT,26,0,0,0,1954,34,0,0,0,0
+2,0,collect at D:\bigdata_project\jobs\04c_capture_spark_ui.py:86,SKIPPED,17,,,0,0,0,0,0,0,0,0,0,0
+1,0,collect at D:\bigdata_project\jobs\04c_capture_spark_ui.py:86,COMPLETE,17,2026-10-22T12:23:52.668GMT,2026-10-22T12:23:53.157GMT,861,2893696,40276762,0,0,0,1954,34,0,0
+0,0,parquet at NativeMethodAccessorImpl.java:0,COMPLETE,1,2026-10-22T12:23:52.597GMT,2026-10-22T12:23:52.620GMT,1,0,0,0,0,0,0,0,0,0

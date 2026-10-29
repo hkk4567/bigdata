@@ -1,0 +1,37 @@
+rule,description,rows,pct
+TIME_NULL,giờ đón hoặc giờ trả bị null,0,0.0
+DUR_NEG,giờ trả < giờ đón (thời lượng âm),1575,0.0038
+DUR_ZERO,thời lượng = 0 giây,11935,0.029
+DUR_LT_1MIN,thời lượng 1–59 giây,488060,1.1855
+DUR_GT_3H,thời lượng > 3 giờ,25349,0.0616
+DUR_GT_24H,thời lượng > 24 giờ,230,0.0006
+PICKUP_OUT_OF_MONTH,ngày đón nằm ngoài tháng của file,420,0.001
+PICKUP_OUT_OF_YEAR,ngày đón nằm ngoài năm của file,56,0.0001
+DIST_NEG,trip_distance < 0,0,0.0
+DIST_ZERO,trip_distance = 0,776305,1.8856
+DIST_GT_100,trip_distance > 100 dặm,1613,0.0039
+SPEED_GT_100MPH,tốc độ trung bình > 100 mph,12171,0.0296
+FARE_NEG,fare_amount < 0,731024,1.7756
+FARE_ZERO,fare_amount = 0,17260,0.0419
+FARE_GT_500,fare_amount > 500,600,0.0015
+TOTAL_NEG,total_amount < 0,609344,1.4801
+TOTAL_ZERO,total_amount = 0,5062,0.0123
+TOTAL_GT_1000,total_amount > 1000,43,0.0001
+TOTAL_LT_FARE,total_amount < fare_amount,603870,1.4668
+TIP_NEG,tip_amount < 0,1331,0.0032
+TOLLS_NEG,tolls_amount < 0,49272,0.1197
+EXTRA_NEG,extra < 0,304569,0.7398
+MTA_TAX_NEG,mta_tax < 0,583164,1.4165
+PAX_NULL,passenger_count null,4091232,9.9375
+PAX_ZERO,passenger_count = 0,401354,0.9749
+PAX_GT_6,passenger_count > 6,284,0.0007
+PU_NULL,pulocationid null,0,0.0
+PU_NOT_IN_ZONES,pulocationid không có trong bảng khu vực,0,0.0
+PU_UNKNOWN_264_265,"pulocationid thuộc nhóm Unknown (264, 265)",146201,0.3551
+DO_NULL,dolocationid null,0,0.0
+DO_NOT_IN_ZONES,dolocationid không có trong bảng khu vực,0,0.0
+DO_UNKNOWN_264_265,"dolocationid thuộc nhóm Unknown (264, 265)",370258,0.8993
+PAY_ZERO,payment_type = 0,4091232,9.9375
+PAY_OUT_OF_RANGE,payment_type ngoài 0–6,0,0.0
+RATE_NULL,ratecodeid null,4091232,9.9375
+RATE_INVALID,ratecodeid ngoài 1–6 và 99,0,0.0

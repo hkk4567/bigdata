@@ -1,0 +1,18 @@
+rule,description,rows,pct_of_input
+TIME_NULL,giờ đón/trả null,0,0.0000
+DUR_NONPOSITIVE,thời lượng <= 0 giây,6000,0.9950
+DUR_GT_MAX,thời lượng > 6 giờ,6000,0.9950
+PICKUP_OUT_OF_MONTH,ngày đón ngoài tháng của file,6000,0.9950
+DIST_NEGATIVE,trip_distance < 0,0,0.0000
+DIST_GT_MAX,trip_distance > 100 dặm,0,0.0000
+SPEED_GT_MAX,tốc độ TB > 80 mph,14730,2.4428
+FARE_NONPOSITIVE,fare_amount <= 0,6005,0.9959
+FARE_BELOW_MIN,0 < fare_amount < 3 khi quãng đường > 0,5776,0.9579
+FARE_GT_MAX,fare_amount > 500,0,0.0000
+TOTAL_NONPOSITIVE,total_amount <= 0,0,0.0000
+TOTAL_GT_MAX,total_amount > 1000,0,0.0000
+NEG_COMPONENT,có khoản phụ phí/tip/thuế < 0,4,0.0007
+ZONE_INVALID,mã khu vực null hoặc không có trong dim_zone,0,0.0000
+PAX_REPAIRED_TO_NULL,"passenger_count = 0 hoặc > 6 -> null (sửa, không loại)",12000,1.9900
+ZERO_DISTANCE_FLAGGED,"trip_distance = 0 -> null + is_zero_distance (sửa, không loại; tính cả dòng đã bị luật khác loại)",2,0.0003
+DUPLICATES_REMOVED,dòng trùng hệt trong tháng,3000,0.4975

@@ -1,0 +1,7 @@
+timestamp,kpi,rows_out,total_trips,check,seconds
+2026-10-21T06:52:35,kpi_daily,91,561754,OK,2.13
+2026-10-21T06:52:36,kpi_hourly_dow,168,561754,OK,0.76
+2026-10-21T06:52:38,kpi_od_top,100,,n/a,1.46
+2026-10-21T06:52:39,kpi_payment_month,12,561754,OK,1.41
+2026-10-21T06:52:40,kpi_vendor_dq,6,561754,OK,1.22
+2026-10-21T06:52:41,kpi_zone_pickup,265,561754,OK,0.84

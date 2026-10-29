@@ -1,0 +1,7 @@
+engine,months,run,status,rows,query_seconds,wall_seconds,peak_rss_gb,trips_check,revenue_check
+pandas_narrow,1,1,OK,187313,0.234,0.5,0.254,187313,2737860.42
+pandas_narrow,2,1,OK,374583,0.246,0.5,0.289,374583,5477667.58
+pandas_wide,1,1,OK,187313,0.253,0.5,0.355,187313,2737860.42
+pandas_wide,2,1,OK,374583,0.273,0.5,0.462,374583,5477667.58
+spark,1,1,OK,187313,1.728,6.5,0.576,187313,2737860.42
+spark,2,1,OK,374583,1.870,6.5,0.603,374583,5477667.58

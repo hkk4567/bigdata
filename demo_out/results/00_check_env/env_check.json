@@ -1,0 +1,11 @@
+{
+  "python": "3.11.17",
+  "os": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.36",
+  "java": "openjdk version \"17.0.20.1\" 2026-08-18",
+  "pyspark": "3.5.3",
+  "rows_generated": 2000000,
+  "zones_aggregated": 265,
+  "rows_after_roundtrip": 2000000,
+  "seconds": 10.95,
+  "ok": true
+}

@@ -1,0 +1,7 @@
+jobId,name,status,submissionTime,completionTime,numTasks,numCompletedTasks,numFailedTasks,stageIds
+5,save at NativeMethodAccessorImpl.java:0,SUCCEEDED,2026-10-22T12:23:29.778GMT,2026-10-22T12:23:29.880GMT,19,2,0,"[6, 7]"
+4,save at NativeMethodAccessorImpl.java:0,SUCCEEDED,2026-10-22T12:23:22.103GMT,2026-10-22T12:23:29.761GMT,17,17,0,[5]
+3,parquet at NativeMethodAccessorImpl.java:0,SUCCEEDED,2026-10-22T12:23:21.932GMT,2026-10-22T12:23:21.954GMT,1,1,0,[4]
+2,collect at D:\bigdata_project\jobs\04c_capture_spark_ui.py:86,SUCCEEDED,2026-10-22T12:23:21.771GMT,2026-10-22T12:23:21.814GMT,18,1,0,"[2, 3]"
+1,collect at D:\bigdata_project\jobs\04c_capture_spark_ui.py:86,SUCCEEDED,2026-10-22T12:23:20.896GMT,2026-10-22T12:23:21.760GMT,17,17,0,[1]
+0,parquet at NativeMethodAccessorImpl.java:0,SUCCEEDED,2026-10-22T12:23:20.717GMT,2026-10-22T12:23:20.764GMT,1,1,0,[0]

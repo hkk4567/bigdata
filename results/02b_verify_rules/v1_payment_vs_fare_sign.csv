@@ -1,0 +1,23 @@
+payment_type,label,fare_class,neg_pattern,rows,pct_within_payment_type,pct_within_fare_class
+4,Dispute,fare<0,đảo toàn bộ (mọi khoản <= 0),362842,45.67,49.635
+2,Cash,fare<0,đảo toàn bộ (mọi khoản <= 0),142529,2.573,19.497
+0,Flex Fare,fare<0,chỉ một phần âm,127089,3.106,17.385
+3,No charge,fare<0,đảo toàn bộ (mọi khoản <= 0),89911,30.819,12.299
+4,Dispute,fare<0,chỉ một phần âm,5812,0.732,0.795
+2,Cash,fare<0,chỉ một phần âm,1901,0.034,0.26
+3,No charge,fare<0,chỉ một phần âm,698,0.239,0.095
+1,Credit card,fare<0,đảo toàn bộ (mọi khoản <= 0),233,0.001,0.032
+1,Credit card,fare<0,chỉ một phần âm,6,0.0,0.001
+0,Flex Fare,fare<0,đảo toàn bộ (mọi khoản <= 0),3,0.0,0.0
+2,Cash,fare=0,-,7218,0.13,41.819
+0,Flex Fare,fare=0,-,3986,0.097,23.094
+4,Dispute,fare=0,-,3024,0.381,17.52
+3,No charge,fare=0,-,1921,0.658,11.13
+1,Credit card,fare=0,-,1108,0.004,6.419
+5,Unknown,fare=0,-,3,75.0,0.017
+1,Credit card,fare>0,-,30450812,99.996,75.333
+2,Cash,fare>0,-,5388440,97.263,13.331
+0,Flex Fare,fare>0,-,3960154,96.796,9.797
+4,Dispute,fare>0,-,422816,53.218,1.046
+3,No charge,fare>0,-,199213,68.284,0.493
+5,Unknown,fare>0,-,1,25.0,0.0
